@@ -3,7 +3,7 @@
 #include <chrono>
 #include <tbb/parallel_for.h>
 
-#include "Octree.h"
+#include "nori/Octree.h"
 
 NORI_NAMESPACE_BEGIN
 

@@ -2,19 +2,19 @@
 // Created by Aaron Winter on 11/23/22.
 //
 
-#include "nori/Octree.h"
+#include "nori/KDTree.h"
 
 #include <chrono>
 #include <tbb/parallel_for.h>
 
-//Set to true for parallel construction of Octree
+//Set to true for parallel construction of KD-Tree
 #define PARALLEL true
-//Time W/O Parallel (set to false): ~1100 MS
-//Time W/ Parallel (set to true):   ~ 500 MS - Cool!
+//Time W/O Parallel (set to false): ~ MS
+//Time W/ Parallel (set to true):   ~ MS
 
 NORI_NAMESPACE_BEGIN
 
-void nori::Octree::build() {
+void KDTree::build() {
     if(built) return;
     built = true;
 
@@ -46,7 +46,7 @@ void nori::Octree::build() {
     std::cout << "Nodes: " << root->nodeCount() << ", Tree Stored Tris: " << root->triCount() << ", Mesh Tris: " << triCt << std::endl;
     std::cout << "Octree Construction Time: " << durOct.count() << " MS" << endl;
 }
-nori::Octree::Node *nori::Octree::build(const nori::BoundingBox3f& bb, std::vector<TriInd> *tris, int depth)
+KDTree::Node *KDTree::build(const nori::BoundingBox3f& bb, std::vector<TriInd> *tris, int depth)
 {//No Triangles
     if (tris == nullptr) return nullptr;
     if (tris->empty())
@@ -85,16 +85,16 @@ nori::Octree::Node *nori::Octree::build(const nori::BoundingBox3f& bb, std::vect
                       });
 #else
     for (auto tri: *tris)
+{
+    for (int i = 0; i < 8; ++i)
     {
-        for (int i = 0; i < 8; ++i)
+        //Check if triangle in AABB i
+        if (triIntersects(AABBs[i], tri))
         {
-            //Check if triangle in AABB i
-            if (triIntersects(AABBs[i], tri))
-            {
-                triangles[i]->push_back(tri);
-            }
+            triangles[i]->push_back(tri);
         }
     }
+}
 #endif
 
     //try to avoid situation where more nodes doesnt change anything
@@ -124,9 +124,9 @@ nori::Octree::Node *nori::Octree::build(const nori::BoundingBox3f& bb, std::vect
                       {n->children[i] = build(AABBs[i], triangles[i], depth + 1);});
 #else
     for (int i = 0; i < 8; ++i)
-    {
-        n->children[i] = build(AABBs[i], triangles[i], depth + 1);
-    }
+{
+    n->children[i] = build(AABBs[i], triangles[i], depth + 1);
+}
 #endif
 
     //we arent using this specific vector anymore, so delete it
@@ -135,20 +135,20 @@ nori::Octree::Node *nori::Octree::build(const nori::BoundingBox3f& bb, std::vect
     return n;
 }
 
-Octree::TriInd Octree::rayIntersect(const nori::Ray3f &ray_, nori::Intersection &its, bool shadowRay) const
+KDTree::TriInd KDTree::rayIntersect(const nori::Ray3f &ray_, nori::Intersection &its, bool shadowRay) const
 {
     //Use the node tri intersect function on the whole octree
     return nodeCloseTriIntersect(root, ray_, its, shadowRay);
 
 }
 
-bool nori::Octree::triIntersects(const BoundingBox3f& bb, const TriInd& tri)
+bool KDTree::triIntersects(const BoundingBox3f& bb, const TriInd& tri)
 {
     return bb.overlaps(meshes[tri.mesh]->getBoundingBox(tri.i));
 }
 
 
-Octree::TriInd Octree::leafRayTriIntersect(nori::Octree::Node *n, const nori::Ray3f &ray_, nori::Intersection &its,
+KDTree::TriInd KDTree::leafRayTriIntersect(Node *n, const nori::Ray3f &ray_, nori::Intersection &its,
                                            bool shadowRay) const
 {
     //if(!n->isLeaf() || n->tris == nullptr) return {};
@@ -175,7 +175,7 @@ Octree::TriInd Octree::leafRayTriIntersect(nori::Octree::Node *n, const nori::Ra
     return f;
 }
 
-Octree::TriInd Octree::nodeCloseTriIntersect(nori::Octree::Node *n, const nori::Ray3f &ray_, nori::Intersection &its,
+KDTree::TriInd KDTree::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray_, nori::Intersection &its,
                                              bool shadowRay) const
 {
     if (n == nullptr) return {};
@@ -216,7 +216,7 @@ Octree::TriInd Octree::nodeCloseTriIntersect(nori::Octree::Node *n, const nori::
     return {};
 }
 
-nori::BoundingBox3f nori::Octree::childBB(const nori::BoundingBox3f& bb, uint index) {
+BoundingBox3f KDTree::childBB(const nori::BoundingBox3f& bb, uint index) {
     /*
                     (TR/max)
        z____________
