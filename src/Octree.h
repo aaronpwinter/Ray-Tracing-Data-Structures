@@ -81,6 +81,21 @@ public:
         std::vector<TriInd>* tris;
     };
 
+    /// A simple struct for holding a float and a Node, used for sorting.
+    struct NodeComp
+    {
+        NodeComp(): dist(0), n(nullptr) {};
+        NodeComp(float d, Node* n): dist(d), n(n) {};
+
+        bool operator<(const NodeComp& right) const
+        {
+            return dist < right.dist;
+        }
+
+        float dist;
+        Node* n;
+    };
+
 public:
     ~Octree() override
     {
@@ -100,7 +115,7 @@ public:
 private:
     Node* build(const BoundingBox3f& bb, std::vector<TriInd>* tris, int depth);
 
-    bool triIntersects(const BoundingBox3f& bb, TriInd tri);
+    bool triIntersects(const BoundingBox3f& bb, const TriInd& tri);
 
     /// Searches through all the triangles in a leaf node for the closest intersection, and
     ///     returns that triangle index. Returns -1 on no intersection

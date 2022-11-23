@@ -137,12 +137,12 @@ nori::Octree::Node *nori::Octree::build(const nori::BoundingBox3f& bb, std::vect
 
 Octree::TriInd Octree::rayIntersect(const nori::Ray3f &ray_, nori::Intersection &its, bool shadowRay) const
 {
-    //Use the node tri intersect function on the octree
+    //Use the node tri intersect function on the whole octree
     return nodeCloseTriIntersect(root, ray_, its, shadowRay);
 
 }
 
-bool nori::Octree::triIntersects(const BoundingBox3f& bb, nori::AccelTree::TriInd tri)
+bool nori::Octree::triIntersects(const BoundingBox3f& bb, const TriInd& tri)
 {
     return bb.overlaps(meshes[tri.mesh]->getBoundingBox(tri.i));
 }
@@ -151,7 +151,7 @@ bool nori::Octree::triIntersects(const BoundingBox3f& bb, nori::AccelTree::TriIn
 Octree::TriInd Octree::leafRayTriIntersect(nori::Octree::Node *n, const nori::Ray3f &ray_, nori::Intersection &its,
                                            bool shadowRay) const
 {
-    if(!n->isLeaf() || n->tris == nullptr) return {};
+    //if(!n->isLeaf() || n->tris == nullptr) return {};
 
     TriInd f = {};      // Triangle index of the closest intersection
 
@@ -182,7 +182,7 @@ Octree::TriInd Octree::nodeCloseTriIntersect(nori::Octree::Node *n, const nori::
     if (n->isLeaf()) return leafRayTriIntersect(n, ray_, its, shadowRay);
 
     //1. Get all the child nodes that the ray intersects
-    std::pair<float, Node*> ints[8];
+    NodeComp ints[8];
     uint32_t totalInts = 0;
 
     for (auto c : n->children)
@@ -192,7 +192,7 @@ Octree::TriInd Octree::nodeCloseTriIntersect(nori::Octree::Node *n, const nori::
             float close, far;
             if(c->AABB.rayIntersect(ray_, close, far))
             {
-                ints[totalInts] = std::pair<float, Node*>(close, c);
+                ints[totalInts] = {close, c};
                 totalInts++;
             }
         }
@@ -205,7 +205,7 @@ Octree::TriInd Octree::nodeCloseTriIntersect(nori::Octree::Node *n, const nori::
     //Go through valid child nodes only (Starting with closest)
     for(uint32_t i = 0; i < totalInts; ++i)
     {
-        Node* c = ints[i].second;
+        Node* c = ints[i].n;
         TriInd interPlace = nodeCloseTriIntersect(c, ray_, its, shadowRay);
         if (interPlace.isValid())
         { //Found a triangle !!! (also quick terminate)
