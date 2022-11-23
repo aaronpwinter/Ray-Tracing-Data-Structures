@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="tbb"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\ext\;CMake Files\ext\nanogui\;CMake Files\ext\nanogui\ext\;CMake Files\ext\nanogui\ext\glfw\;CMake Files\ext\nanogui\ext\glfw\CMake\;CMake Files\ext\nanogui\ext\glfw\CMake\modules\;CMake Files\ext\nanogui\ext\glfw\src\;CMake Files\ext\openexr\;CMake Files\ext\openexr\IlmBase\;CMake Files\ext\openexr\IlmBase\Half\;CMake Files\ext\openexr\IlmBase\Iex\;CMake Files\ext\openexr\IlmBase\IexMath\;CMake Files\ext\openexr\IlmBase\Imath\;CMake Files\ext\openexr\IlmBase\IlmThread\;CMake Files\ext\openexr\OpenEXR\;CMake Files\ext\openexr\OpenEXR\IlmImf\;CMake Files\ext\tbb\;CMake Files\ext\tbb\build\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/tbb"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tbb_def_files">
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/tbb"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 tbb_def_files"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tbb_static">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/tbb/libtbb_static.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/tbb"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D__TBB_BUILD=1"/>
+					<Add option="-D__TBB_DYNAMIC_LOAD_ENABLED=0"/>
+					<Add option="-D__TBB_SOURCE_DIRECTLY_INCLUDED=1"/>
+					<Add option="-DDO_ITT_NOTIFY"/>
+					<Add option="-DUSE_PTHREAD"/>
+					<Add directory="/home/debian/nori/ext/tbb/include"/>
+					<Add directory="/home/debian/nori/ext/tbb/src"/>
+					<Add directory="/home/debian/nori/ext/tbb/src/rml/include"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/tbb"/>
+					<Add directory="/home/debian/nori/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 tbb_static"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tbb_static/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/tbb/libtbb_static.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/tbb"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D__TBB_BUILD=1"/>
+					<Add option="-D__TBB_DYNAMIC_LOAD_ENABLED=0"/>
+					<Add option="-D__TBB_SOURCE_DIRECTLY_INCLUDED=1"/>
+					<Add option="-DDO_ITT_NOTIFY"/>
+					<Add option="-DUSE_PTHREAD"/>
+					<Add directory="/home/debian/nori/ext/tbb/include"/>
+					<Add directory="/home/debian/nori/ext/tbb/src"/>
+					<Add directory="/home/debian/nori/ext/tbb/src/rml/include"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/tbb"/>
+					<Add directory="/home/debian/nori/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 tbb_static/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/debian/nori/ext/tbb/src/old/concurrent_queue_v2.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/old/concurrent_queue_v2.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/old/concurrent_vector_v2.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/old/concurrent_vector_v2.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/old/spin_rw_mutex_v2.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/old/spin_rw_mutex_v2.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/old/task_v2.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/rml/client/rml_tbb.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/arena.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/arena.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/cache_aligned_allocator.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/concurrent_hash_map.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/concurrent_monitor.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/concurrent_monitor.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/concurrent_queue.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/concurrent_vector.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/condition_variable.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/critical_section.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/dynamic_link.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/dynamic_link.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/governor.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/governor.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/itt_notify.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/itt_notify.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/lin64-tbb-export.def">
+			<Option target="tbb_def_files"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/market.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/market.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/mutex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/observer_proxy.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/observer_proxy.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/pipeline.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/private_server.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/queuing_mutex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/queuing_rw_mutex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/reader_writer_lock.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/recursive_mutex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/scheduler.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/scheduler.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/semaphore.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/semaphore.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/spin_mutex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/spin_rw_mutex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/task.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/task_group_context.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_main.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_main.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_misc.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_misc.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_misc_ex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_statistics.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_statistics.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_thread.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/x86_rtm_rw_mutex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbbmalloc/lin64-tbbmalloc-export.def">
+			<Option target="tbb_def_files"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\nanogui\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/CMake/modules/FindVulkan.cmake">
+			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\CMake\modules\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\src\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\src\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\src\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/glfw_config.h.in">
+			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\src\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Half/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\Half\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Iex/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\Iex\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IexMath/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\IexMath\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\Imath\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\IlmThread\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\OpenEXR\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\OpenEXR\IlmImf\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\tbb\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/build/version_string.ver.in">
+			<Option virtualFolder="CMake Files\ext\tbb\build\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

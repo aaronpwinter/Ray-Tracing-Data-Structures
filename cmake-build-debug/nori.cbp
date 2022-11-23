@@ -1,0 +1,3089 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="nori"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\ext\;CMake Files\ext\nanogui\;CMake Files\ext\nanogui\ext\;CMake Files\ext\nanogui\ext\glfw\;CMake Files\ext\nanogui\ext\glfw\CMake\;CMake Files\ext\nanogui\ext\glfw\CMake\modules\;CMake Files\ext\nanogui\ext\glfw\src\;CMake Files\ext\openexr\;CMake Files\ext\openexr\IlmBase\;CMake Files\ext\openexr\IlmBase\Half\;CMake Files\ext\openexr\IlmBase\Iex\;CMake Files\ext\openexr\IlmBase\IexMath\;CMake Files\ext\openexr\IlmBase\Imath\;CMake Files\ext\openexr\IlmBase\IlmThread\;CMake Files\ext\openexr\OpenEXR\;CMake Files\ext\openexr\OpenEXR\IlmImf\;CMake Files\ext\tbb\;CMake Files\ext\tbb\build\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/debian/nori/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/home/debian/nori/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/home/debian/nori/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/home/debian/nori/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/home/debian/nori/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/debian/nori/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/debian/nori/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nori">
+				<Option output="/home/debian/nori/cmake-build-debug/nori" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/include"/>
+					<Add directory="/home/debian/nori/ext/tinyformat"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/eigen"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/config"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/tbb/include"/>
+					<Add directory="/home/debian/nori/ext/pcg32"/>
+					<Add directory="/home/debian/nori/ext/pugixml/src"/>
+					<Add directory="/home/debian/nori/ext/hypothesis"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glfw/include"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glew/include"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/nanovg/src"/>
+					<Add directory="/home/debian/nori/ext/nanogui/include"/>
+					<Add directory="/home/debian/nori/ext/filesystem"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/nanovg/example"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 nori"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nori/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/nori" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/include"/>
+					<Add directory="/home/debian/nori/ext/tinyformat"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/eigen"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/config"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/tbb/include"/>
+					<Add directory="/home/debian/nori/ext/pcg32"/>
+					<Add directory="/home/debian/nori/ext/pugixml/src"/>
+					<Add directory="/home/debian/nori/ext/hypothesis"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glfw/include"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glew/include"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/nanovg/src"/>
+					<Add directory="/home/debian/nori/ext/nanogui/include"/>
+					<Add directory="/home/debian/nori/ext/filesystem"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/nanovg/example"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 nori/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="warptest">
+				<Option output="/home/debian/nori/cmake-build-debug/warptest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/include"/>
+					<Add directory="/home/debian/nori/ext/tinyformat"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/eigen"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/config"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/tbb/include"/>
+					<Add directory="/home/debian/nori/ext/pcg32"/>
+					<Add directory="/home/debian/nori/ext/pugixml/src"/>
+					<Add directory="/home/debian/nori/ext/hypothesis"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glfw/include"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glew/include"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/nanovg/src"/>
+					<Add directory="/home/debian/nori/ext/nanogui/include"/>
+					<Add directory="/home/debian/nori/ext/filesystem"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/nanovg/example"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 warptest"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="warptest/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/warptest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/include"/>
+					<Add directory="/home/debian/nori/ext/tinyformat"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/eigen"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/config"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/tbb/include"/>
+					<Add directory="/home/debian/nori/ext/pcg32"/>
+					<Add directory="/home/debian/nori/ext/pugixml/src"/>
+					<Add directory="/home/debian/nori/ext/hypothesis"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glfw/include"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glew/include"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/nanovg/src"/>
+					<Add directory="/home/debian/nori/ext/nanogui/include"/>
+					<Add directory="/home/debian/nori/ext/filesystem"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/nanovg/example"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 warptest/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="package">
+				<Option working_dir="/home/debian/nori/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 package"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="package_source">
+				<Option working_dir="/home/debian/nori/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 package_source"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pugixml">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/libpugixml.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/Makefile&quot;  VERBOSE=1 pugixml"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pugixml/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/libpugixml.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/Makefile&quot;  VERBOSE=1 pugixml/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CopyIlmBaseLibs">
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/Makefile&quot;  VERBOSE=1 CopyIlmBaseLibs"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Half">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/libHalf.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 Half"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Half/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/libHalf.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 Half/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="eLut">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/eLut" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 eLut"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="eLut/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/eLut" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 eLut/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="toFloat">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/toFloat" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 toFloat"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="toFloat/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/toFloat" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 toFloat/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Iex">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/libIex.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 Iex"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Iex/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/libIex.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 Iex/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IexMath">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/libIexMath.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 IexMath"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IexMath/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/libIexMath.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 IexMath/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Imath">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/libImath.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 Imath"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Imath/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/libImath.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 Imath/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IlmThread">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/libIlmThread.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 IlmThread"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IlmThread/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/libIlmThread.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 IlmThread/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IlmImf">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/libIlmImf.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DILM_IMF_TEST_IMAGEDIR=&quot;/home/debian/nori/IlmImfTest/&quot;"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfUtil"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmaketiled"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrenvmap"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmakepreview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmultiview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfFuzzTest"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 IlmImf"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IlmImf/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/libIlmImf.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DILM_IMF_TEST_IMAGEDIR=&quot;/home/debian/nori/IlmImfTest/&quot;"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfUtil"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmaketiled"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrenvmap"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmakepreview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmultiview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfFuzzTest"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 IlmImf/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="b44ExpLogTable">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/b44ExpLogTable" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DILM_IMF_TEST_IMAGEDIR=&quot;/home/debian/nori/IlmImfTest/&quot;"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfUtil"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmaketiled"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrenvmap"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmakepreview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmultiview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfFuzzTest"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 b44ExpLogTable"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="b44ExpLogTable/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/b44ExpLogTable" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DILM_IMF_TEST_IMAGEDIR=&quot;/home/debian/nori/IlmImfTest/&quot;"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfUtil"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmaketiled"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrenvmap"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmakepreview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmultiview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfFuzzTest"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 b44ExpLogTable/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dwaLookups">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/dwaLookups" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DILM_IMF_TEST_IMAGEDIR=&quot;/home/debian/nori/IlmImfTest/&quot;"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfUtil"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmaketiled"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrenvmap"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmakepreview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmultiview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfFuzzTest"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 dwaLookups"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dwaLookups/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/dwaLookups" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DILM_IMF_TEST_IMAGEDIR=&quot;/home/debian/nori/IlmImfTest/&quot;"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfUtil"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmaketiled"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrenvmap"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmakepreview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmultiview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfFuzzTest"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 dwaLookups/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IlmImf-obj">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/IlmImf-obj.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DILM_IMF_TEST_IMAGEDIR=&quot;/home/debian/nori/IlmImfTest/&quot;"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfUtil"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmaketiled"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrenvmap"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmakepreview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmultiview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfFuzzTest"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 IlmImf-obj"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IlmImf-obj/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/IlmImf-obj.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DILM_IMF_TEST_IMAGEDIR=&quot;/home/debian/nori/IlmImfTest/&quot;"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImf"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/config"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfUtil"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmaketiled"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrenvmap"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmakepreview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/exrmultiview"/>
+					<Add directory="/home/debian/nori/ext/openexr/OpenEXR/IlmImfFuzzTest"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 IlmImf-obj/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tbb_def_files">
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/tbb"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 tbb_def_files"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tbb_static">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/tbb/libtbb_static.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/tbb"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D__TBB_BUILD=1"/>
+					<Add option="-D__TBB_DYNAMIC_LOAD_ENABLED=0"/>
+					<Add option="-D__TBB_SOURCE_DIRECTLY_INCLUDED=1"/>
+					<Add option="-DDO_ITT_NOTIFY"/>
+					<Add option="-DUSE_PTHREAD"/>
+					<Add directory="/home/debian/nori/ext/tbb/include"/>
+					<Add directory="/home/debian/nori/ext/tbb/src"/>
+					<Add directory="/home/debian/nori/ext/tbb/src/rml/include"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/tbb"/>
+					<Add directory="/home/debian/nori/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 tbb_static"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tbb_static/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/tbb/libtbb_static.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/tbb"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D__TBB_BUILD=1"/>
+					<Add option="-D__TBB_DYNAMIC_LOAD_ENABLED=0"/>
+					<Add option="-D__TBB_SOURCE_DIRECTLY_INCLUDED=1"/>
+					<Add option="-DDO_ITT_NOTIFY"/>
+					<Add option="-DUSE_PTHREAD"/>
+					<Add directory="/home/debian/nori/ext/tbb/include"/>
+					<Add directory="/home/debian/nori/ext/tbb/src"/>
+					<Add directory="/home/debian/nori/ext/tbb/src/rml/include"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/tbb"/>
+					<Add directory="/home/debian/nori/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 tbb_static/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/tbb/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nanogui-obj">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/nanogui-obj.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/nanogui"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DNANOGUI_BUILD"/>
+					<Add option="-DNVG_BUILD"/>
+					<Add option="-DCORO_SJLJ"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/eigen"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glfw/include"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/nanovg/src"/>
+					<Add directory="/home/debian/nori/ext/nanogui/include"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/nanogui"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/coro"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 nanogui-obj"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nanogui-obj/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/nanogui-obj.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/nanogui"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DNANOGUI_BUILD"/>
+					<Add option="-DNVG_BUILD"/>
+					<Add option="-DCORO_SJLJ"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/eigen"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glfw/include"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/nanovg/src"/>
+					<Add directory="/home/debian/nori/ext/nanogui/include"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/nanogui"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/coro"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 nanogui-obj/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nanogui">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/nanogui/libnanogui.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/nanogui"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCORO_SJLJ"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/eigen"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glfw/include"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/nanovg/src"/>
+					<Add directory="/home/debian/nori/ext/nanogui/include"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/nanogui"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/coro"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 nanogui"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nanogui/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/nanogui/libnanogui.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/nanogui"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCORO_SJLJ"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/eigen"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glfw/include"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/nanovg/src"/>
+					<Add directory="/home/debian/nori/ext/nanogui/include"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/nanogui"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/coro"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 nanogui/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw_objects">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/glfw_objects.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glfw/include"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glfw/src"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 glfw_objects"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw_objects/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/glfw_objects.objlib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glfw/include"/>
+					<Add directory="/home/debian/nori/ext/nanogui/ext/glfw/src"/>
+					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 glfw_objects/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 glfw"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw/fast">
+				<Option output="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 glfw/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/ext/nanovg/src/nanovg.c.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/nanogui_resources.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/button.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/checkbox.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/colorpicker.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/colorwheel.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/combobox.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/common.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/glcanvas.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/glutil.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/graph.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/imagepanel.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/imageview.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/label.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/layout.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/messagedialog.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/popup.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/popupbutton.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/progressbar.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/screen.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/serializer.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/slider.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/stackedwidget.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/tabheader.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/tabwidget.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/textbox.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/theme.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/vscrollpanel.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/widget.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/CMakeFiles/nanogui-obj.dir/src/window.cpp.o">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/context.c.o">
+			<Option target="nanogui"/>
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/egl_context.c.o">
+			<Option target="nanogui"/>
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/glx_context.c.o">
+			<Option target="nanogui"/>
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/init.c.o">
+			<Option target="nanogui"/>
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/input.c.o">
+			<Option target="nanogui"/>
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/linux_joystick.c.o">
+			<Option target="nanogui"/>
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/monitor.c.o">
+			<Option target="nanogui"/>
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/posix_time.c.o">
+			<Option target="nanogui"/>
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/posix_tls.c.o">
+			<Option target="nanogui"/>
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/vulkan.c.o">
+			<Option target="nanogui"/>
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/window.c.o">
+			<Option target="nanogui"/>
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/x11_init.c.o">
+			<Option target="nanogui"/>
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/x11_monitor.c.o">
+			<Option target="nanogui"/>
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/x11_window.c.o">
+			<Option target="nanogui"/>
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/CMakeFiles/glfw_objects.dir/xkb_unicode.c.o">
+			<Option target="nanogui"/>
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/ext_build/glfw/src/glfw_config.h">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/nanogui_resources.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/nanogui/nanogui_resources.cpp.rule">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/eLut.h.rule">
+			<Option target="Half"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/toFloat.h.rule">
+			<Option target="Half"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfAcesFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfBoxAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfCRgbaFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfChannelList.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfChannelListAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfChromaticities.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfChromaticitiesAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfCompositeDeepScanLine.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfCompressionAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfCompressor.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfConvert.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfDeepCompositing.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfDeepFrameBuffer.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfDeepImageStateAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfDeepScanLineInputFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfDeepScanLineInputPart.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfDeepScanLineOutputFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfDeepScanLineOutputPart.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfDeepTiledInputFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfDeepTiledInputPart.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfDeepTiledOutputFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfDeepTiledOutputPart.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfDoubleAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfEnvmap.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfEnvmapAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfFastHuf.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfFloatAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfFloatVectorAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfFrameBuffer.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfFramesPerSecond.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfGenericInputFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfGenericOutputFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfHeader.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfHuf.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfIO.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfInputFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfInputPart.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfInputPartData.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfIntAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfKeyCode.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfKeyCodeAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfLineOrderAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfLut.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfMatrixAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfMisc.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfMultiPartInputFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfMultiPartOutputFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfMultiView.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfOpaqueAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfOutputFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfOutputPart.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfOutputPartData.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfPartType.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfPizCompressor.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfPreviewImage.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfPreviewImageAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfPxr24Compressor.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfRational.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfRationalAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfRgbaFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfRgbaYca.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfRle.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfRleCompressor.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfScanLineInputFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfStandardAttributes.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfStdIO.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfStringAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfStringVectorAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfSystemSpecific.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfTestFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfThreading.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfTileDescriptionAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfTileOffsets.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfTiledInputFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfTiledInputPart.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfTiledMisc.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfTiledOutputFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfTiledOutputPart.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfTiledRgbaFile.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfTimeCode.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfTimeCodeAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfVecAttribute.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfVersion.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfWav.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfZip.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/CMakeFiles/IlmImf-obj.dir/ImfZipCompressor.cpp.o">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/b44ExpLogTable.h.rule">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/OpenEXR/IlmImf/dwaLookups.h.rule">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/include/GLFW/glfw3.h">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/include/GLFW/glfw3native.h">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/context.c">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/egl_context.c">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/egl_context.h">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/glx_context.c">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/glx_context.h">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/init.c">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/input.c">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/internal.h">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/linux_joystick.c">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/linux_joystick.h">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/monitor.c">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/posix_time.c">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/posix_time.h">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/posix_tls.c">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/posix_tls.h">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/vulkan.c">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/window.c">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/x11_init.c">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/x11_monitor.c">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/x11_platform.h">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/x11_window.c">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/xkb_unicode.c">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/xkb_unicode.h">
+			<Option target="glfw_objects"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/nanovg/src/nanovg.c">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/nanovg/src/nanovg.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/button.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/checkbox.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/colorpicker.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/colorwheel.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/combobox.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/common.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/formhelper.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/glcanvas.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/glutil.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/graph.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/imagepanel.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/imageview.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/label.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/layout.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/messagedialog.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/nanogui.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/opengl.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/popup.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/popupbutton.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/progressbar.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/screen.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/serializer/core.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/serializer/opengl.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/serializer/sparse.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/slider.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/stackedwidget.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/tabheader.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/tabwidget.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/textbox.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/theme.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/toolbutton.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/vscrollpanel.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/widget.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/include/nanogui/window.h">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/button.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/checkbox.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/colorpicker.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/colorwheel.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/combobox.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/common.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/glcanvas.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/glutil.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/graph.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/imagepanel.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/imageview.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/label.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/layout.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/messagedialog.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/popup.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/popupbutton.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/progressbar.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/screen.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/serializer.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/slider.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/stackedwidget.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/tabheader.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/tabwidget.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/textbox.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/theme.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/vscrollpanel.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/widget.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/src/window.cpp">
+			<Option target="nanogui-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Half/eLut.cpp">
+			<Option target="eLut"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Half/half.cpp">
+			<Option target="Half"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Half/half.h">
+			<Option target="Half"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Half/toFloat.cpp">
+			<Option target="toFloat"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Iex/IexBaseExc.cpp">
+			<Option target="Iex"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Iex/IexBaseExc.h">
+			<Option target="Iex"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Iex/IexThrowErrnoExc.cpp">
+			<Option target="Iex"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Iex/IexThrowErrnoExc.h">
+			<Option target="Iex"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IexMath/IexMathFloatExc.cpp">
+			<Option target="IexMath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IexMath/IexMathFloatExc.h">
+			<Option target="IexMath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IexMath/IexMathFpu.cpp">
+			<Option target="IexMath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IexMath/IexMathFpu.h">
+			<Option target="IexMath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThread.cpp">
+			<Option target="IlmThread"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThread.h">
+			<Option target="IlmThread"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadMutex.cpp">
+			<Option target="IlmThread"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadMutex.h">
+			<Option target="IlmThread"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadMutexPosix.cpp">
+			<Option target="IlmThread"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadPool.cpp">
+			<Option target="IlmThread"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadPool.h">
+			<Option target="IlmThread"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadPosix.cpp">
+			<Option target="IlmThread"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadSemaphore.cpp">
+			<Option target="IlmThread"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadSemaphore.h">
+			<Option target="IlmThread"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadSemaphorePosix.cpp">
+			<Option target="IlmThread"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadSemaphorePosixCompat.cpp">
+			<Option target="IlmThread"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathBox.cpp">
+			<Option target="Imath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathBox.h">
+			<Option target="Imath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathColorAlgo.cpp">
+			<Option target="Imath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathColorAlgo.h">
+			<Option target="Imath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathFun.cpp">
+			<Option target="Imath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathFun.h">
+			<Option target="Imath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathMatrixAlgo.cpp">
+			<Option target="Imath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathMatrixAlgo.h">
+			<Option target="Imath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathRandom.cpp">
+			<Option target="Imath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathRandom.h">
+			<Option target="Imath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathShear.cpp">
+			<Option target="Imath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathShear.h">
+			<Option target="Imath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathVec.cpp">
+			<Option target="Imath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathVec.h">
+			<Option target="Imath"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfAcesFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfAcesFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfB44Compressor.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfB44Compressor.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfBoxAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfBoxAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfCRgbaFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfCRgbaFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfChannelList.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfChannelList.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfChannelListAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfChannelListAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfChromaticities.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfChromaticities.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfChromaticitiesAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfChromaticitiesAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfCompositeDeepScanLine.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfCompositeDeepScanLine.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfCompressionAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfCompressionAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfCompressor.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfCompressor.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfConvert.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfConvert.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepCompositing.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepCompositing.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepFrameBuffer.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepFrameBuffer.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepImageStateAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepImageStateAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepScanLineInputFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepScanLineInputFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepScanLineInputPart.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepScanLineInputPart.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepScanLineOutputFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepScanLineOutputFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepScanLineOutputPart.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepScanLineOutputPart.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepTiledInputFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepTiledInputFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepTiledInputPart.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepTiledInputPart.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepTiledOutputFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepTiledOutputFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepTiledOutputPart.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDeepTiledOutputPart.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDoubleAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDoubleAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDwaCompressor.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfDwaCompressor.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfEnvmap.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfEnvmap.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfEnvmapAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfEnvmapAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfFastHuf.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfFastHuf.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfFloatAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfFloatAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfFloatVectorAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfFloatVectorAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfFrameBuffer.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfFrameBuffer.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfFramesPerSecond.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfFramesPerSecond.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfGenericInputFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfGenericInputFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfGenericOutputFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfGenericOutputFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfHeader.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfHeader.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfHuf.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfHuf.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfIO.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfIO.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfInputFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfInputFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfInputPart.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfInputPart.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfInputPartData.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfInputPartData.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfIntAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfIntAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfKeyCode.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfKeyCode.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfKeyCodeAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfKeyCodeAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfLineOrderAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfLineOrderAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfLut.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfLut.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfMatrixAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfMatrixAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfMisc.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfMisc.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfMultiPartInputFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfMultiPartInputFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfMultiPartOutputFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfMultiPartOutputFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfMultiView.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfMultiView.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfOpaqueAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfOpaqueAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfOutputFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfOutputFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfOutputPart.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfOutputPart.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfOutputPartData.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfOutputPartData.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfPartType.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfPartType.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfPizCompressor.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfPizCompressor.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfPreviewImage.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfPreviewImage.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfPreviewImageAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfPreviewImageAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfPxr24Compressor.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfPxr24Compressor.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfRational.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfRational.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfRationalAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfRationalAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfRgbaFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfRgbaFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfRgbaYca.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfRgbaYca.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfRle.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfRle.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfRleCompressor.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfRleCompressor.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfScanLineInputFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfScanLineInputFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfStandardAttributes.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfStandardAttributes.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfStdIO.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfStdIO.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfStringAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfStringAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfStringVectorAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfStringVectorAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfSystemSpecific.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfSystemSpecific.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTestFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTestFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfThreading.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfThreading.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTileDescriptionAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTileDescriptionAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTileOffsets.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTileOffsets.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTiledInputFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTiledInputFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTiledInputPart.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTiledInputPart.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTiledMisc.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTiledMisc.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTiledOutputFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTiledOutputFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTiledOutputPart.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTiledOutputPart.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTiledRgbaFile.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTiledRgbaFile.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTimeCode.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTimeCode.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTimeCodeAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfTimeCodeAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfVecAttribute.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfVecAttribute.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfVersion.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfVersion.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfWav.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfWav.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfZip.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfZip.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfZipCompressor.cpp">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/ImfZipCompressor.h">
+			<Option target="IlmImf-obj"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/b44ExpLogTable.cpp">
+			<Option target="b44ExpLogTable"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/dwaLookups.cpp">
+			<Option target="dwaLookups"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/pugixml/src/pugixml.cpp">
+			<Option target="pugixml"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/pugixml/src/pugixml.hpp">
+			<Option target="pugixml"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/old/concurrent_queue_v2.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/old/concurrent_queue_v2.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/old/concurrent_vector_v2.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/old/concurrent_vector_v2.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/old/spin_rw_mutex_v2.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/old/spin_rw_mutex_v2.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/old/task_v2.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/rml/client/rml_tbb.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/arena.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/arena.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/cache_aligned_allocator.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/concurrent_hash_map.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/concurrent_monitor.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/concurrent_monitor.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/concurrent_queue.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/concurrent_vector.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/condition_variable.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/critical_section.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/dynamic_link.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/dynamic_link.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/governor.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/governor.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/itt_notify.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/itt_notify.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/lin64-tbb-export.def">
+			<Option target="tbb_def_files"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/market.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/market.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/mutex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/observer_proxy.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/observer_proxy.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/pipeline.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/private_server.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/queuing_mutex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/queuing_rw_mutex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/reader_writer_lock.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/recursive_mutex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/scheduler.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/scheduler.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/semaphore.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/semaphore.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/spin_mutex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/spin_rw_mutex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/task.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/task_group_context.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_main.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_main.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_misc.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_misc.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_misc_ex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_statistics.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_statistics.h">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/tbb_thread.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbb/x86_rtm_rw_mutex.cpp">
+			<Option target="tbb_static"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/src/tbbmalloc/lin64-tbbmalloc-export.def">
+			<Option target="tbb_def_files"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/accel.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/bbox.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/bitmap.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/block.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/bsdf.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/camera.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/color.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/common.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/dpdf.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/emitter.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/frame.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/integrator.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/mesh.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/object.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/parser.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/proplist.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/ray.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/rfilter.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/sampler.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/scene.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/timer.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/transform.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/vector.h">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/include/nori/warp.h">
+			<Option target="nori"/>
+			<Option target="warptest"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/accel.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/bitmap.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/block.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/chi2test.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/common.cpp">
+			<Option target="nori"/>
+			<Option target="warptest"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/dielectric.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/diffuse.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/gui.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/independent.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/main.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/mesh.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/microfacet.cpp">
+			<Option target="nori"/>
+			<Option target="warptest"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/mirror.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/normals.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/obj.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/object.cpp">
+			<Option target="nori"/>
+			<Option target="warptest"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/parser.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/perspective.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/proplist.cpp">
+			<Option target="nori"/>
+			<Option target="warptest"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/rfilter.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/scene.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/ttest.cpp">
+			<Option target="nori"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/warp.cpp">
+			<Option target="nori"/>
+			<Option target="warptest"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/src/warptest.cpp">
+			<Option target="warptest"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\nanogui\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/CMake/modules/FindVulkan.cmake">
+			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\CMake\modules\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\src\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\src\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\src\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/glfw_config.h.in">
+			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\src\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Half/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\Half\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Iex/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\Iex\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IexMath/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\IexMath\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\Imath\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\IlmThread\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\OpenEXR\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\openexr\OpenEXR\IlmImf\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ext\tbb\"/>
+		</Unit>
+		<Unit filename="/home/debian/nori/ext/tbb/build/version_string.ver.in">
+			<Option virtualFolder="CMake Files\ext\tbb\build\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/filesystem" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/hypothesis" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/nanogui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/nanogui/ext/eigen" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/nanogui/ext/glfw" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/nanogui/ext/nanovg" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/nanogui/ext/pybind11" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/nanogui/ext/pybind11/tools/clang" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/openexr" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/pcg32" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/pugixml" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/tbb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/tinyformat" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ext/zlib" vcs="Git" />
+  </component>
+</project>
