@@ -1,6 +1,5 @@
 #include <nori/accel.h>
 #include <Eigen/Geometry>
-#include <numeric>
 #include <chrono>
 #include <tbb/parallel_for.h>
 

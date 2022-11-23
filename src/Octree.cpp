@@ -42,8 +42,9 @@ void nori::Octree::build() {
     auto durOct = std::chrono::duration_cast<std::chrono::milliseconds>(endOct-startOct);
 
     //Print some information
+    std::cout << "Acceleration Structure: Octree" << std::endl;
     std::cout << "Nodes: " << root->nodeCount() << ", Tree Stored Tris: " << root->triCount() << ", Mesh Tris: " << triCt << std::endl;
-    std::cout << "Octtree Construction Time: " << durOct.count() << " MS" << endl;
+    std::cout << "Octree Construction Time: " << durOct.count() << " MS" << endl;
 }
 nori::Octree::Node *nori::Octree::build(const nori::BoundingBox3f& bb, std::vector<TriInd> *tris, int depth)
 {//No Triangles
