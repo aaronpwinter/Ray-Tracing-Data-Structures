@@ -8,29 +8,29 @@
 		<Option virtualFolders="CMake Files\;CMake Files\ext\;CMake Files\ext\nanogui\;CMake Files\ext\nanogui\ext\;CMake Files\ext\nanogui\ext\glfw\;CMake Files\ext\nanogui\ext\glfw\CMake\;CMake Files\ext\nanogui\ext\glfw\CMake\modules\;CMake Files\ext\nanogui\ext\glfw\src\;CMake Files\ext\openexr\;CMake Files\ext\openexr\IlmBase\;CMake Files\ext\openexr\IlmBase\Half\;CMake Files\ext\openexr\IlmBase\Iex\;CMake Files\ext\openexr\IlmBase\IexMath\;CMake Files\ext\openexr\IlmBase\Imath\;CMake Files\ext\openexr\IlmBase\IlmThread\;CMake Files\ext\openexr\OpenEXR\;CMake Files\ext\openexr\OpenEXR\IlmImf\;CMake Files\ext\tbb\;CMake Files\ext\tbb\build\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase"/>
+				<Option working_dir="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Half">
-				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/libHalf.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+				<Option output="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/libHalf.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -41,26 +41,26 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 Half"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 Half"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Half/fast">
-				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/libHalf.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+				<Option output="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/libHalf.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -71,26 +71,26 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 Half/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 Half/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="eLut">
-				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/eLut" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+				<Option output="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/eLut" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -101,26 +101,26 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 eLut"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 eLut"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="eLut/fast">
-				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/eLut" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+				<Option output="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/eLut" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -131,26 +131,26 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 eLut/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 eLut/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="toFloat">
-				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/toFloat" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+				<Option output="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/toFloat" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -161,26 +161,26 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 toFloat"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 toFloat"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="toFloat/fast">
-				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/toFloat" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+				<Option output="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/toFloat" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -191,26 +191,26 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 toFloat/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 toFloat/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Iex">
-				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/libIex.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex"/>
+				<Option output="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Iex/libIex.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Iex"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -221,26 +221,26 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 Iex"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 Iex"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Iex/fast">
-				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/libIex.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex"/>
+				<Option output="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Iex/libIex.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Iex"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -251,26 +251,26 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 Iex/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 Iex/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Iex/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="IexMath">
-				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/libIexMath.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath"/>
+				<Option output="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/libIexMath.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IexMath"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -281,26 +281,26 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 IexMath"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 IexMath"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="IexMath/fast">
-				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/libIexMath.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath"/>
+				<Option output="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/libIexMath.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IexMath"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -311,26 +311,26 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 IexMath/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 IexMath/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IexMath/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Imath">
-				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/libImath.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath"/>
+				<Option output="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Imath/libImath.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Imath"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -341,26 +341,26 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 Imath"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 Imath"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Imath/fast">
-				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/libImath.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath"/>
+				<Option output="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Imath/libImath.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Imath"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -371,26 +371,26 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 Imath/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 Imath/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Imath/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="IlmThread">
-				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/libIlmThread.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread"/>
+				<Option output="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/libIlmThread.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -401,26 +401,26 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 IlmThread"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 IlmThread"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="IlmThread/fast">
-				<Option output="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/libIlmThread.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread"/>
+				<Option output="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/libIlmThread.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IlmThread"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Iex"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/IexMath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Imath"/>
-					<Add directory="/home/debian/nori/ext/openexr/IlmBase/Half"/>
-					<Add directory="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half"/>
+					<Add directory="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/config"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -431,191 +431,191 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 IlmThread/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 IlmThread/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/IlmThread/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/eLut.h.rule">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/eLut.h.rule">
 			<Option target="Half"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/cmake-build-debug/ext_build/openexr/IlmBase/Half/toFloat.h.rule">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/cmake-build-debug/ext_build/openexr/IlmBase/Half/toFloat.h.rule">
 			<Option target="Half"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Half/eLut.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half/eLut.cpp">
 			<Option target="eLut"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Half/half.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half/half.cpp">
 			<Option target="Half"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Half/half.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half/half.h">
 			<Option target="Half"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Half/toFloat.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half/toFloat.cpp">
 			<Option target="toFloat"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Iex/IexBaseExc.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex/IexBaseExc.cpp">
 			<Option target="Iex"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Iex/IexBaseExc.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex/IexBaseExc.h">
 			<Option target="Iex"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Iex/IexThrowErrnoExc.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex/IexThrowErrnoExc.cpp">
 			<Option target="Iex"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Iex/IexThrowErrnoExc.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex/IexThrowErrnoExc.h">
 			<Option target="Iex"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IexMath/IexMathFloatExc.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath/IexMathFloatExc.cpp">
 			<Option target="IexMath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IexMath/IexMathFloatExc.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath/IexMathFloatExc.h">
 			<Option target="IexMath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IexMath/IexMathFpu.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath/IexMathFpu.cpp">
 			<Option target="IexMath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IexMath/IexMathFpu.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath/IexMathFpu.h">
 			<Option target="IexMath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThread.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread/IlmThread.cpp">
 			<Option target="IlmThread"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThread.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread/IlmThread.h">
 			<Option target="IlmThread"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadMutex.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread/IlmThreadMutex.cpp">
 			<Option target="IlmThread"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadMutex.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread/IlmThreadMutex.h">
 			<Option target="IlmThread"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadMutexPosix.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread/IlmThreadMutexPosix.cpp">
 			<Option target="IlmThread"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadPool.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread/IlmThreadPool.cpp">
 			<Option target="IlmThread"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadPool.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread/IlmThreadPool.h">
 			<Option target="IlmThread"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadPosix.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread/IlmThreadPosix.cpp">
 			<Option target="IlmThread"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadSemaphore.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread/IlmThreadSemaphore.cpp">
 			<Option target="IlmThread"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadSemaphore.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread/IlmThreadSemaphore.h">
 			<Option target="IlmThread"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadSemaphorePosix.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread/IlmThreadSemaphorePosix.cpp">
 			<Option target="IlmThread"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/IlmThreadSemaphorePosixCompat.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread/IlmThreadSemaphorePosixCompat.cpp">
 			<Option target="IlmThread"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathBox.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath/ImathBox.cpp">
 			<Option target="Imath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathBox.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath/ImathBox.h">
 			<Option target="Imath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathColorAlgo.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath/ImathColorAlgo.cpp">
 			<Option target="Imath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathColorAlgo.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath/ImathColorAlgo.h">
 			<Option target="Imath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathFun.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath/ImathFun.cpp">
 			<Option target="Imath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathFun.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath/ImathFun.h">
 			<Option target="Imath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathMatrixAlgo.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath/ImathMatrixAlgo.cpp">
 			<Option target="Imath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathMatrixAlgo.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath/ImathMatrixAlgo.h">
 			<Option target="Imath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathRandom.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath/ImathRandom.cpp">
 			<Option target="Imath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathRandom.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath/ImathRandom.h">
 			<Option target="Imath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathShear.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath/ImathShear.cpp">
 			<Option target="Imath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathShear.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath/ImathShear.h">
 			<Option target="Imath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathVec.cpp">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath/ImathVec.cpp">
 			<Option target="Imath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/ImathVec.h">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath/ImathVec.h">
 			<Option target="Imath"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/CMakeLists.txt">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/CMakeLists.txt">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\ext\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/nanogui/CMakeLists.txt">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/nanogui/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\ext\nanogui\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/CMakeLists.txt">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/nanogui/ext/glfw/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/CMake/modules/FindVulkan.cmake">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/nanogui/ext/glfw/CMake/modules/FindVulkan.cmake">
 			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\CMake\modules\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/CMakeLists.txt">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/nanogui/ext/glfw/src/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\src\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/glfw3.pc.in">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/nanogui/ext/glfw/src/glfw3.pc.in">
 			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\src\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/glfw3Config.cmake.in">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/nanogui/ext/glfw/src/glfw3Config.cmake.in">
 			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\src\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/nanogui/ext/glfw/src/glfw_config.h.in">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/nanogui/ext/glfw/src/glfw_config.h.in">
 			<Option virtualFolder="CMake Files\ext\nanogui\ext\glfw\src\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/CMakeLists.txt">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\ext\openexr\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/CMakeLists.txt">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Half/CMakeLists.txt">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Half/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\Half\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Iex/CMakeLists.txt">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Iex/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\Iex\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IexMath/CMakeLists.txt">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IexMath/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\IexMath\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/Imath/CMakeLists.txt">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/Imath/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\Imath\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/IlmBase/IlmThread/CMakeLists.txt">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/IlmBase/IlmThread/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\ext\openexr\IlmBase\IlmThread\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/CMakeLists.txt">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/OpenEXR/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\ext\openexr\OpenEXR\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/openexr/OpenEXR/IlmImf/CMakeLists.txt">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/openexr/OpenEXR/IlmImf/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\ext\openexr\OpenEXR\IlmImf\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/tbb/CMakeLists.txt">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/tbb/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\ext\tbb\"/>
 		</Unit>
-		<Unit filename="/home/debian/nori/ext/tbb/build/version_string.ver.in">
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/ext/tbb/build/version_string.ver.in">
 			<Option virtualFolder="CMake Files\ext\tbb\build\"/>
 		</Unit>
 	</Project>

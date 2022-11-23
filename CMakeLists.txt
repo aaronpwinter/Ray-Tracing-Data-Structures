@@ -89,7 +89,7 @@ add_executable(nori
   src/mirror.cpp
   src/dielectric.cpp
   src/normals.cpp
-)
+        include/nori/AccelTree.h src/AccelTree.cpp src/Octree.cpp src/Octree.h)
 
 add_definitions(${NANOGUI_EXTRA_DEFS})
 
