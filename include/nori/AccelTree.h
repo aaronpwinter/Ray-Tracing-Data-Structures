@@ -3,6 +3,8 @@
 //
 #pragma once
 
+#define uint unsigned int
+
 #include <nori/mesh.h>
 #include <vector>
 
