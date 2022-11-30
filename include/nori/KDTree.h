@@ -6,7 +6,7 @@
 
 ///The upper bound for triangles in a node that stops the node from subdividing.
 #define FEW_TRIS 10
-#define MAX_DEPTH 50
+#define MAX_DEPTH 100
 
 ///The "time" to traverse a node. Used in SAH.
 #define TRAVERSAL_TIME 1

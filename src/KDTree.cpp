@@ -61,12 +61,17 @@ KDTree::Node *KDTree::build(const BoundingBox3f& bb, std::vector<TriInd> *tris, 
         return new Node(bb, tris);
     }
 
+    Split s = getGoodSplit(bb, tris);
+
+    if(s.l < 0)
+    { //No advantage to splitting
+        return new Node(bb, tris);
+    }
+
     //Set up AABBs
     BoundingBox3f AABBs[2];
     //& Count up triangles into vector "triangles"
     std::vector<TriInd>* triangles[2];
-
-    Split s = getGoodSplit(bb, tris);
 
     AABBs[0] = lowBB(bb, s);
     triangles[0] = new std::vector<TriInd>();
@@ -261,7 +266,7 @@ KDTree::TriInd KDTree::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray_, n
     while(si >= 0)
     {
         Node* cur = stack[si];
-        float goodBB = intersects[si];
+        bool goodBB = intersects[si];
         --si;
         if(cur == nullptr || !goodBB) continue;
 
@@ -339,9 +344,10 @@ BoundingBox3f KDTree::highBB(const BoundingBox3f &bb, Split s) {
 }
 
 ///Whether the SAH is implemented or not. Also allows for speed comparisons.
-#define TRIVIAL_SPLIT true
+#define TRIVIAL_SPLIT false
 KDTree::Split KDTree::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *tris) const {
 
+#if TRIVIAL_SPLIT
     //DUMMY TRIVIAL IMPLEMENTATION
     //      SPLIT LONGEST DIMENSION IN 2
 
@@ -362,14 +368,14 @@ KDTree::Split KDTree::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> 
     }
     Split triv(dimension, sz[dimension]/2);
 
-#if TRIVIAL_SPLIT
     return triv;
 #else
+
     Split bestS;
     float minSAH = -1;
 
     //The size of the AABB
-    //Vector3f sz = bb.max-bb.min;
+    Vector3f sz = bb.max-bb.min;
     float totTriCost = tris->size()*TRI_INT_COST;
     ///SA of the whole BB
     float bbSA = bb.getSurfaceArea();
@@ -380,9 +386,9 @@ KDTree::Split KDTree::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> 
     {
         TriInd t = (*tris)[i];
         //Min pt
-        triPts[i] = {t, getTriBB(t).min, true};
+        triPts[i] = {t, getTriBB(t).min-bb.min, true};
         //max pt
-        triPts[tris->size()+i] = {t, getTriBB(t).max, false};
+        triPts[tris->size()+i] = {t, getTriBB(t).max-bb.min, false};
     }
 
 
@@ -390,182 +396,49 @@ KDTree::Split KDTree::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> 
     for (int d = 0; d < 3; ++d) {
         //AXIS constants
         uint d2 = (d+1)%3, d3 = (d+2)%3;
-        //surface area of the two axises that arent being changed
-        //float pl = yzSA + getTriBB(t).min.x()*yzDist - bb.min.x()*yzDist;
-        //float pl = yzSA + (getTriBB(t).min.x()-bb.min.x())*yzDist;
-        //float pl = 2*(sz.y()*sz.z() + sz.y() * getTriBB(t).min.x() + sz.y()*getTriBB(t).min.x());
-        //float ph = yzSA + bb.max.x()*yzDist - getTriBB(t).min.x()*yzDist;
-        //float ph = yzSA + (bb.max.x()-getTriBB(t).min.x())*yzDist;
+
+        //Some constants for use in upcoming calculations
+        //Plane ortho to axis surface area
         float axSA = 2 * sz[d2] * sz[d3];
+        //basically the perimeter of above
         float axDist = 2 * (sz[d2] + sz[d3]);
-        float axMinConst = axSA - bb.min[d] * axDist;
-        float axMaxConst = axSA + bb.max[d] * axDist;
+        //A constant for the higher box
+        float axMaxConst = axSA + sz[d] * axDist;
 
         //Try with the min axis bounds
         std::sort(triPts.begin(), triPts.end(), [d](const TriSAH &a, const TriSAH &b) {
-            return a.pt[d] >
+            return a.pt[d] <
                    b.pt[d];
         });
         float lCost = 0;
         float hCost = totTriCost;
         for (auto t: triPts) {
-            if(t.min) lCost += TRI_INT_COST;
+            if(!t.min) hCost -= TRI_INT_COST;
 
-            if(bb.min[d] < t.pt[d]  && t.pt[d] < bb.max[d]) {
+            if(0 < t.pt[d]  && t.pt[d] < sz[d]) {
                 ///Probability of intersecting the "lower" node
-                float pl = (axMinConst + t.pt[d] * axDist);
+                float pl = axSA + t.pt[d] * axDist;
 
                 ///Probability of intersecting the "higher" node
-                float ph = (axMaxConst - t.pt[d] * axDist);
+                float ph = axMaxConst - t.pt[d] * axDist;
 
                 float sah = TRAVERSAL_TIME + (pl * lCost + ph * hCost) / bbSA;
 
                 if (minSAH == -1 || sah < minSAH) {
                     //std::cout << "Dim " << d << ", lCost " << lCost << ", hCost " << hCost << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
-                    //std::cout << "BBSA " << bbSA << ", pl " << pl << ", ph " << ph << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
+                    //std::cout << "BBSA " << bbSA << ", pt " << t.pt[d] << ", pl " << pl << ", ph " << ph << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
                     minSAH = sah;
                     bestS = {d, t.pt[d]};
                 }
             }
+            if(t.min) lCost += TRI_INT_COST;
 
-            if(!t.min) hCost -= TRI_INT_COST;
         }
 
     }
 
-
-    /*
-    //Try with the max axis bounds
-    std::sort(tris->begin(), tris->end(), [this, d](const TriInd &a, const TriInd &b) {
-        return getTriBB(a).max[d] >
-               getTriBB(b).max[d];
-    });
-    curTriCost = totTriCost+triInterCost((*tris)[0]);
-    for (auto t: *tris) {
-        curTriCost -= triInterCost(t);
-        ///Probability of intersecting the "lower" node
-        float pl = (axMinConst + getTriBB(t).max[d] * axDist) / bbSA;
-
-        ///Probability of intersecting the "higher" node
-        float ph = (axMaxConst - getTriBB(t).max[d] * axDist) / bbSA;
-
-        float sah = TRAVERSAL_TIME + pl * curTriCost + ph * (totTriCost - curTriCost);
-
-        if (sah < minSAH) {
-            minSAH = sah;
-            bestS = {d, getTriBB(t).max[d]};
-        }
-    }
-     */
-
-    /*
-    //Y AXIS Tests
-    float xzSA = 2*sz.x()*sz.z();
-    float xzDist = 2*(sz.x()+sz.z());
-    float xzMinConst = xzSA - bb.min.y()*xzDist;
-    float xzMaxConst = xzSA + bb.max.y()*xzDist;
-
-    //Try with the y min axis bounds
-    std::sort(tris->begin(), tris->end(), [this](const TriInd& a, const TriInd& b){
-        return this->triCompYMin(a,b);
-    });
-    curTriCost = 0;//-triInterCost((*tris)[0]);
-    for(auto t: *tris)
-    {
-        curTriCost += triInterCost(t);
-        ///Probability of intersecting the "lower" node
-        float pl = (xzMinConst + getTriBB(t).min.y()*xzDist)/bbSA;
-
-        ///Probability of intersecting the "higher" node
-        float ph = (xzMaxConst - getTriBB(t).min.y()*xzDist)/bbSA;
-
-        float sah = TRAVERSAL_TIME + pl*curTriCost + ph*(totTriCost-curTriCost);
-
-        if (sah < minSAH)
-        {
-            minSAH = sah;
-            bestS = {y, getTriBB(t).min.y()};
-        }
-    }
-
-    //Try with the y max axis bounds
-    std::sort(tris->begin(), tris->end(), [this](const TriInd& a, const TriInd& b){
-        return this->triCompYMax(a,b);
-    });
-    curTriCost = totTriCost;//+triInterCost((*tris)[0]);
-    for(auto t: *tris)
-    {
-        curTriCost -= triInterCost(t);
-        ///Probability of intersecting the "lower" node
-        float pl = (xzMinConst + getTriBB(t).max.y()*xzDist)/bbSA;
-
-        ///Probability of intersecting the "higher" node
-        float ph = (xzMaxConst - getTriBB(t).max.y()*xzDist)/bbSA;
-
-        float sah = TRAVERSAL_TIME + pl*curTriCost + ph*(totTriCost-curTriCost);
-
-        if (sah < minSAH)
-        {
-            minSAH = sah;
-            bestS = {y, getTriBB(t).max.y()};
-        }
-    }
-
-
-    //Z AXIS Tests
-    float xySA = 2*sz.x()*sz.y();
-    float xyDist = 2*(sz.x()+sz.y());
-    float xyMinConst = xySA - bb.min.z()*xyDist;
-    float xyMaxConst = xySA + bb.max.z()*xyDist;
-
-    //Try with the z min axis bounds
-    std::sort(tris->begin(), tris->end(), [this](const TriInd& a, const TriInd& b){
-        return this->triCompZMin(a,b);
-    });
-    curTriCost = 0;//-triInterCost((*tris)[0]);
-    for(auto t: *tris)
-    {
-        curTriCost += triInterCost(t);
-        ///Probability of intersecting the "lower" node
-        float pl = (xyMinConst + getTriBB(t).min.z()*xyDist)/bbSA;
-
-        ///Probability of intersecting the "higher" node
-        float ph = (xyMaxConst - getTriBB(t).min.z()*xyDist)/bbSA;
-
-        float sah = TRAVERSAL_TIME + pl*curTriCost + ph*(totTriCost-curTriCost);
-
-        if (sah < minSAH)
-        {
-            minSAH = sah;
-            bestS = {z, getTriBB(t).min.z()};
-        }
-    }
-
-    //Try with the z max axis bounds
-    std::sort(tris->begin(), tris->end(), [this](const TriInd& a, const TriInd& b){
-        return this->triCompZMax(a,b);
-    });
-    curTriCost = totTriCost;//+triInterCost((*tris)[0]);
-    for(auto t: *tris)
-    {
-        curTriCost -= triInterCost(t);
-        ///Probability of intersecting the "lower" node
-        float pl = (xyMinConst + getTriBB(t).max.z()*xyDist)/bbSA;
-
-        ///Probability of intersecting the "higher" node
-        float ph = (xyMaxConst - getTriBB(t).max.z()*xyDist)/bbSA;
-
-        float sah = TRAVERSAL_TIME + pl*curTriCost + ph*(totTriCost-curTriCost);
-
-        if (sah < minSAH)
-        {
-            minSAH = sah;
-            bestS = {z, getTriBB(t).max.z()};
-        }
-    }
-     */
-
-    return minSAH < TRI_INT_COST*tris->size() ? bestS : triv;
+    //If the SAH isnt better than just no split, then dont split (invalid split return)
+    return minSAH < TRI_INT_COST*tris->size() ? bestS : Split{x, -1};
 #endif
 
 }
