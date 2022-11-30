@@ -3,12 +3,13 @@
 #include <chrono>
 #include <tbb/parallel_for.h>
 
-#include "nori/Octree.h"
+//#include "nori/Octree.h"
+#include "nori/KDTree.h"
 
 NORI_NAMESPACE_BEGIN
 
 Accel::Accel() {
-    m_tree = new Octree();
+    m_tree = new KDTree();
 }
 
 

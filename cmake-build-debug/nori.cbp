@@ -2878,6 +2878,9 @@
 		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/include/nori/AccelTree.h">
 			<Option target="nori"/>
 		</Unit>
+		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/include/nori/BVH.h">
+			<Option target="nori"/>
+		</Unit>
 		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/include/nori/KDTree.h">
 			<Option target="nori"/>
 		</Unit>
@@ -2961,9 +2964,6 @@
 			<Option target="nori"/>
 		</Unit>
 		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/src/BVH.cpp">
-			<Option target="nori"/>
-		</Unit>
-		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/src/BVH.h">
 			<Option target="nori"/>
 		</Unit>
 		<Unit filename="/home/debian/RayTracing/Ray-Tracing-Data-Structures/src/KDTree.cpp">
