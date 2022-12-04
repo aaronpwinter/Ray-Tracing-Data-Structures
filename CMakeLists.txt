@@ -64,6 +64,10 @@ add_executable(nori
   include/nori/transform.h
   include/nori/vector.h
   include/nori/warp.h
+  include/nori/AccelTree.h
+  include/nori/Octree.h 
+  include/nori/KDTree.h 
+  include/nori/BVH.h
 
   # Source code files
   src/bitmap.cpp
@@ -89,7 +93,10 @@ add_executable(nori
   src/mirror.cpp
   src/dielectric.cpp
   src/normals.cpp
-        include/nori/AccelTree.h src/AccelTree.cpp src/Octree.cpp include/nori/Octree.h src/KDTree.cpp include/nori/KDTree.h src/BVH.cpp include/nori/BVH.h)
+  src/AccelTree.cpp 
+  src/Octree.cpp
+  src/KDTree.cpp 
+  src/BVH.cpp 
 
 add_definitions(${NANOGUI_EXTRA_DEFS})
 
