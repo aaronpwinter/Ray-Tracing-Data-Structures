@@ -75,6 +75,10 @@ public:
     virtual TriInd rayIntersect(const Ray3f &ray_, Intersection &its, bool shadowRay) const = 0;
 
 protected:
+
+    bool triIntersects(const BoundingBox3f& bb, const TriInd& tri);
+
+protected:
     std::vector<Mesh*>  meshes;         ///< Meshes within the data structure
     BoundingBox3f       bbox;           ///< Bounding box of the entire scene
 

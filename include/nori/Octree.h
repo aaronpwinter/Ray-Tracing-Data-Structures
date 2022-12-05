@@ -115,8 +115,6 @@ public:
 private:
     Node* build(const BoundingBox3f& bb, std::vector<TriInd>* tris, int depth);
 
-    bool triIntersects(const BoundingBox3f& bb, const TriInd& tri);
-
     /// Searches through all the triangles in a leaf node for the closest intersection, and
     ///     returns that triangle index. Returns -1 on no intersection
     /// \param n The LEAF node to look through.

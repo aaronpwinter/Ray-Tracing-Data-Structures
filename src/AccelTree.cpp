@@ -23,4 +23,9 @@ void AccelTree::addMesh(Mesh *mesh)
     }
 }
 
+
+bool AccelTree::triIntersects(const BoundingBox3f& bb, const TriInd& tri)
+{
+    return bb.overlaps(meshes[tri.mesh]->getBoundingBox(tri.i), true);
+}
 NORI_NAMESPACE_END

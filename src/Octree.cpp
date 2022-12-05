@@ -142,12 +142,6 @@ Octree::TriInd Octree::rayIntersect(const nori::Ray3f &ray_, nori::Intersection 
 
 }
 
-bool nori::Octree::triIntersects(const BoundingBox3f& bb, const TriInd& tri)
-{
-    return bb.overlaps(meshes[tri.mesh]->getBoundingBox(tri.i));
-}
-
-
 Octree::TriInd Octree::leafRayTriIntersect(nori::Octree::Node *n, const nori::Ray3f &ray_, nori::Intersection &its,
                                            bool shadowRay) const
 {

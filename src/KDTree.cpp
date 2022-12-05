@@ -149,12 +149,6 @@ KDTree::TriInd KDTree::rayIntersect(const nori::Ray3f &ray_, nori::Intersection 
 
 }
 
-bool KDTree::triIntersects(const BoundingBox3f& bb, const TriInd& tri)
-{
-    return bb.overlaps(meshes[tri.mesh]->getBoundingBox(tri.i), true);
-}
-
-
 KDTree::TriInd KDTree::leafRayTriIntersect(Node *n, const nori::Ray3f &ray_, nori::Intersection &its,
                                            bool shadowRay) const
 {
