@@ -97,6 +97,7 @@ add_executable(nori
   src/Octree.cpp
   src/KDTree.cpp 
   src/BVH.cpp 
+)
 
 add_definitions(${NANOGUI_EXTRA_DEFS})
 
