@@ -8,8 +8,8 @@
     <integrator type="normals"/>
 
 	<!-- Load the Dragon scan (a freely available scan from the Scanford University Computer Graphics Laboratory) -->
-	<mesh type="obj">
-		<string name="filename" value="dragon.obj"/>
+	<mesh type="conf">
+		<string name="filename" value="dragonStandRight.conf"/>
 
 		<bsdf type="diffuse"/>
 	</mesh>

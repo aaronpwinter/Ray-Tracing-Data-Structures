@@ -11,6 +11,7 @@
 ///The "time" to traverse a node. Used in SAH.
 #define TRAVERSAL_TIME 1
 #define TRI_INT_COST 2
+#define EMPTY_MODIFIER .8
 
 
 #include "nori/AccelTree.h"

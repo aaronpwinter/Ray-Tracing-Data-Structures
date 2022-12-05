@@ -65,6 +65,7 @@ KDTree::Node *KDTree::build(const BoundingBox3f& bb, std::vector<TriInd> *tris, 
 
     if(s.l < 0)
     { //No advantage to splitting
+        //std::cout << "invalid" << std::endl;
         return new Node(bb, tris);
     }
 
@@ -150,7 +151,7 @@ KDTree::TriInd KDTree::rayIntersect(const nori::Ray3f &ray_, nori::Intersection 
 
 bool KDTree::triIntersects(const BoundingBox3f& bb, const TriInd& tri)
 {
-    return bb.overlaps(meshes[tri.mesh]->getBoundingBox(tri.i));
+    return bb.overlaps(meshes[tri.mesh]->getBoundingBox(tri.i), true);
 }
 
 
@@ -372,7 +373,7 @@ KDTree::Split KDTree::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> 
 #else
 
     Split bestS;
-    float minSAH = -1;
+    float minSAH = TRI_INT_COST*tris->size() + 1;
 
     //The size of the AABB
     Vector3f sz = bb.max-bb.min;
@@ -423,14 +424,17 @@ KDTree::Split KDTree::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> 
                 float ph = axMaxConst - t.pt[d] * axDist;
 
                 float sah = TRAVERSAL_TIME + (pl * lCost + ph * hCost) / bbSA;
+                if (lCost == 0 || hCost == 0)
+                    sah *= EMPTY_MODIFIER;
 
-                if (minSAH == -1 || sah < minSAH) {
+                if (sah <= minSAH) {
                     //std::cout << "Dim " << d << ", lCost " << lCost << ", hCost " << hCost << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
                     //std::cout << "BBSA " << bbSA << ", pt " << t.pt[d] << ", pl " << pl << ", ph " << ph << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
                     minSAH = sah;
                     bestS = {d, t.pt[d]};
                 }
             }
+
             if(t.min) lCost += TRI_INT_COST;
 
         }
