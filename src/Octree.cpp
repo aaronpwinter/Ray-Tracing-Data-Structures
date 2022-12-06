@@ -19,16 +19,16 @@ void nori::Octree::build() {
     built = true;
 
     //Collect all triangles
-    uint triCt = 0;
+    uint32_t triCt = 0;
     for(auto mesh: meshes)
     {
         triCt += mesh->getTriangleCount();
     }
     std::vector<TriInd>* tris = new std::vector<TriInd>(triCt);
-    uint curInd = 0;
-    for(uint i = 0; i < meshes.size(); ++i)
+    uint32_t curInd = 0;
+    for(std::size_t i = 0; i < meshes.size(); ++i)
     {
-        for(uint t = 0; t < meshes[i]->getTriangleCount(); ++t)
+        for(uint32_t t = 0; t < meshes[i]->getTriangleCount(); ++t)
         {
             (*tris)[curInd] = TriInd(i, t);
             ++curInd;
@@ -145,8 +145,6 @@ Octree::TriInd Octree::rayIntersect(const nori::Ray3f &ray_, nori::Intersection 
 Octree::TriInd Octree::leafRayTriIntersect(nori::Octree::Node *n, const nori::Ray3f &ray_, nori::Intersection &its,
                                            bool shadowRay) const
 {
-    //if(!n->isLeaf() || n->tris == nullptr) return {};
-
     TriInd f = {};      // Triangle index of the closest intersection
 
     Ray3f ray(ray_); /// Make a copy of the ray (we will need to update its '.maxt' value)
@@ -210,7 +208,7 @@ Octree::TriInd Octree::nodeCloseTriIntersect(nori::Octree::Node *n, const nori::
     return {};
 }
 
-nori::BoundingBox3f nori::Octree::childBB(const nori::BoundingBox3f& bb, uint index) {
+nori::BoundingBox3f nori::Octree::childBB(const nori::BoundingBox3f& bb, int index) {
     /*
                     (TR/max)
        z____________

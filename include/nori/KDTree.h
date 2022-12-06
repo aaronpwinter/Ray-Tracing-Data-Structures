@@ -35,6 +35,11 @@ public:
         dim d;
         ///Location along the split axis
         float l;
+
+        bool isValid() const
+        {
+            return l >= 0;
+        }
     };
 
     /// A node for the Octree, which contains 8 children, stores its own AABB,
@@ -165,34 +170,6 @@ private:
     BoundingBox3f getTriBB(const TriInd& t) const{
         return meshes[t.mesh]->getBoundingBox(t.i);
     }
-
-    /*
-    //Trivial comp functions for sorting
-    bool triCompXMin(const TriInd& t1, const TriInd&  t2) const {
-        return getTriBB(t1).min.x() <
-                getTriBB(t2).min.x();
-    }
-    bool triCompXMax(const TriInd&  t1, const TriInd&  t2) const {
-        return getTriBB(t1).max.x() >
-                getTriBB(t2).max.x();
-    }
-    bool triCompYMin(const TriInd&  t1, const TriInd&  t2) const {
-        return getTriBB(t1).min.y() <
-                getTriBB(t2).min.y();
-    }
-    bool triCompYMax(const TriInd&  t1, const TriInd&  t2) const {
-        return getTriBB(t1).max.y() >
-                getTriBB(t2).max.y();
-    }
-    bool triCompZMin(const TriInd&  t1, const TriInd&  t2) const {
-        return getTriBB(t1).min.z() <
-                getTriBB(t2).min.z();
-    }
-    bool triCompZMax(const TriInd&  t1, const TriInd&  t2) const {
-        return getTriBB(t1).max.z() >
-                getTriBB(t2).max.z();
-    }
-     */
 
 private:
     Node* root;

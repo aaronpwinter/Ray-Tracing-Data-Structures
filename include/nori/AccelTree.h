@@ -3,8 +3,6 @@
 //
 #pragma once
 
-//#define uint unsigned int
-
 #include <nori/mesh.h>
 #include <vector>
 
@@ -19,16 +17,16 @@ public:
         /// Initializes an invalid TriInd
         TriInd(): mesh(-1), i(-1) {};
 
-        TriInd(uint meshInd, uint32_t triInd): mesh(meshInd), i(triInd) {};
+        TriInd(std::size_t meshInd, uint32_t triInd): mesh(meshInd), i(triInd) {};
 
         // Returns if this is a valid TriInd (IE: would be invalid if a ray didn't hit a Triangle)
         bool isValid() const
         {
-            return (mesh != (uint)-1) || (i != (uint32_t)-1);
+            return (mesh != (std::size_t)-1) || (i != (uint32_t)-1);
         }
 
         /// The index of the mesh within the "meshes" vector containing this triangle.
-        uint mesh;
+        std::size_t mesh;
         /// The index of the triangle within the given mesh.
         uint32_t i;
     };

@@ -110,7 +110,7 @@ public:
     /// \param bb The Bounding Box of the parent node
     /// \param index The index of this child within the parent node
     /// \return The bounding box of the child node
-    static BoundingBox3f childBB(const BoundingBox3f& bb, uint index);
+    static BoundingBox3f childBB(const BoundingBox3f& bb, int index);
 
 private:
     Node* build(const BoundingBox3f& bb, std::vector<TriInd>* tris, int depth);

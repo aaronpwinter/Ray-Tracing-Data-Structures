@@ -19,16 +19,16 @@ void KDTree::build() {
     built = true;
 
     //Collect all triangles
-    uint triCt = 0;
+    uint32_t triCt = 0;
     for(auto mesh: meshes)
     {
         triCt += mesh->getTriangleCount();
     }
     std::vector<TriInd>* tris = new std::vector<TriInd>(triCt);
-    uint curInd = 0;
-    for(uint i = 0; i < meshes.size(); ++i)
+    uint32_t curInd = 0;
+    for(std::size_t i = 0; i < meshes.size(); ++i)
     {
-        for(uint t = 0; t < meshes[i]->getTriangleCount(); ++t)
+        for(uint32_t t = 0; t < meshes[i]->getTriangleCount(); ++t)
         {
             (*tris)[curInd] = TriInd(i, t);
             ++curInd;
@@ -63,7 +63,7 @@ KDTree::Node *KDTree::build(const BoundingBox3f& bb, std::vector<TriInd> *tris, 
 
     Split s = getGoodSplit(bb, tris);
 
-    if(s.l < 0)
+    if(!s.isValid())
     { //No advantage to splitting
         //std::cout << "invalid" << std::endl;
         return new Node(bb, tris);
@@ -152,8 +152,6 @@ KDTree::TriInd KDTree::rayIntersect(const nori::Ray3f &ray_, nori::Intersection 
 KDTree::TriInd KDTree::leafRayTriIntersect(Node *n, const nori::Ray3f &ray_, nori::Intersection &its,
                                            bool shadowRay) const
 {
-    //if(!n->isLeaf() || n->tris == nullptr) return {};
-
     TriInd f = {};      // Triangle index of the closest intersection
 
     Ray3f ray(ray_); /// Make a copy of the ray (we will need to update its '.maxt' value)
@@ -189,7 +187,7 @@ KDTree::TriInd KDTree::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray_, n
     float dists[2]{0,0};
     bool valid[2]{false,false};
 
-    for (uint i = 0; i < 2; ++i)
+    for (int i = 0; i < 2; ++i)
     {
         Node* c = n->children[i];
         if (c != nullptr)
@@ -279,7 +277,7 @@ KDTree::TriInd KDTree::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray_, n
             float dists[2]{999999,999999}; //large values, not too important
             bool valid[2]{false,false};
 
-            for (uint i = 0; i < 2; ++i)
+            for (int i = 0; i < 2; ++i)
             {
                 Node* c = cur->children[i];
                 if (c != nullptr)
@@ -292,9 +290,6 @@ KDTree::TriInd KDTree::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray_, n
                 }
             }
 
-            //if (!valid[0]) dists[0] = dists[1] + 1;
-            //if (!valid[1]) dists[1] = dists[0] + 1;
-
             if(dists[0] < dists[1])
             { //0 node closer (or just invalid idk)
                 ++si;
@@ -305,7 +300,7 @@ KDTree::TriInd KDTree::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray_, n
                 intersects[si] = valid[0];
             }
             else
-            {
+            {//1 node is closer
                 ++si;
                 stack[si] = cur->children[0];
                 intersects[si] = valid[0];
@@ -377,7 +372,7 @@ KDTree::Split KDTree::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> 
 
     //Construct an array with both start and end pts
     std::vector<TriSAH> triPts(tris->size()*2);
-    for(uint i = 0; i < tris->size(); ++i)
+    for(std::size_t i = 0; i < tris->size(); ++i)
     {
         TriInd t = (*tris)[i];
         //Min pt
@@ -390,7 +385,7 @@ KDTree::Split KDTree::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> 
     //Dimension loop
     for (int d = 0; d < 3; ++d) {
         //AXIS constants
-        uint d2 = (d+1)%3, d3 = (d+2)%3;
+        int d2 = (d+1)%3, d3 = (d+2)%3;
 
         //Some constants for use in upcoming calculations
         //Plane ortho to axis surface area
