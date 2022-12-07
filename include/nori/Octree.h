@@ -4,17 +4,17 @@
 
 #pragma once
 
-///The upper bound for triangles in a node that stops the node from subdividing.
-#define FEW_TRIS 10
-#define MAX_DEPTH 10
-
-
 #include "nori/AccelTree.h"
 
 NORI_NAMESPACE_BEGIN
 
 class Octree: public AccelTree
 {
+public:
+    ///The upper bound for triangles in a node that stops the node from subdividing.
+    static constexpr std::size_t FEW_TRIS = 10;
+    int MAX_DEPTH = 100;
+
 public:
     /// A node for the Octree, which contains 8 children, stores its own AABB,
     ///     and a vector of triangle indices.

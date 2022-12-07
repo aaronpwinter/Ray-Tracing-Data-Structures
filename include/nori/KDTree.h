@@ -4,22 +4,23 @@
 
 #pragma once
 
-///The upper bound for triangles in a node that stops the node from subdividing.
-#define FEW_TRIS 10
-#define MAX_DEPTH 100
-
-///The "time" to traverse a node. Used in SAH.
-#define TRAVERSAL_TIME 1
-#define TRI_INT_COST 2
-#define EMPTY_MODIFIER .8
-
-
 #include "nori/AccelTree.h"
 
 NORI_NAMESPACE_BEGIN
 
+
 class KDTree: public AccelTree
 {
+public:
+    ///The upper bound for triangles in a node that stops the node from subdividing.
+    static constexpr std::size_t FEW_TRIS = 10;
+     int MAX_DEPTH = 100;
+
+    ///The "time" to traverse a node. Used in SAH.
+    static constexpr float TRAVERSAL_TIME = 1;
+    static constexpr float TRI_INT_COST = 2;
+    static constexpr float EMPTY_MODIFIER = .8;
+
 public:
     enum dim {x=0, y=1, z=2};
 
@@ -42,7 +43,7 @@ public:
         }
     };
 
-    /// A node for the Octree, which contains 8 children, stores its own AABB,
+    /// A node for the KDTree, which contains 2 children, stores its own AABB,
     ///     and a vector of triangle indices.
     struct Node
     {
@@ -104,7 +105,7 @@ public:
         std::vector<TriInd>* tris;
 
         ///The split location for this KD Node.
-        Split s;
+        //Split s;
     };
 
     /// A simple struct used for SAH triangle sorting and "events" (enter/exit tri)

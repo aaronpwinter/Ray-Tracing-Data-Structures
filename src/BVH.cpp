@@ -35,16 +35,16 @@ void BVH::build() {
         }
     }
 
-    //Build (& time) Octree
-    auto startOct = std::chrono::high_resolution_clock::now();
+    //Build (& time) KD-Tree
+    auto startT = std::chrono::high_resolution_clock::now();
     root = build(bbox, tris, 0);
-    auto endOct = std::chrono::high_resolution_clock::now();
-    auto durOct = std::chrono::duration_cast<std::chrono::milliseconds>(endOct-startOct);
+    auto endT = std::chrono::high_resolution_clock::now();
+    auto durT = std::chrono::duration_cast<std::chrono::milliseconds>(endT-startT);
 
     //Print some information
-    std::cout << "Acceleration Structure: Octree" << std::endl;
+    std::cout << "Acceleration Structure: BVH" << std::endl;
     std::cout << "Nodes: " << root->nodeCount() << ", Tree Stored Tris: " << root->triCount() << ", Mesh Tris: " << triCt << std::endl;
-    std::cout << "Octree Construction Time: " << durOct.count() << " MS" << endl;
+    std::cout << "BVH Construction Time: " << durT.count() << " MS" << endl;
 }
 BVH::Node *BVH::build(const nori::BoundingBox3f& bb, std::vector<TriInd> *tris, int depth)
 {//No Triangles
@@ -58,75 +58,54 @@ BVH::Node *BVH::build(const nori::BoundingBox3f& bb, std::vector<TriInd> *tris, 
     //Few triangles
     if (tris->size() <= FEW_TRIS || depth >= MAX_DEPTH)
     {
-        return new Node(bb, tris);
+        return new Node(bb, tris, -1);
     }
+
+    SplitData s = getGoodSplit(bb, tris);
+
+    if( s.dim == -1 )
+    { //No advantage to splitting
+        //std::cout << "invalid" << std::endl;
+        return new Node(bb, tris, -1);
+    }
+
 
     //Set up AABBs
-    BoundingBox3f AABBs[8];
+    BoundingBox3f AABBs[2]{s.bb1,s.bb2};
     //& Count up triangles into vector "triangles"
-    std::vector<TriInd>* triangles[8];
+    std::vector<TriInd>* triangles[2];
 
-    for (int i = 0; i < 8; ++i)
-    {
-        AABBs[i] = childBB(bb, i);
-        triangles[i] = new std::vector<TriInd>();
+
+    AABBs[0] = getTriBB( (*tris)[0] );
+    triangles[0] = new std::vector<TriInd>(s.index);
+    for (std::size_t i = 0; i < s.index; ++i) {
+        TriInd t = (*tris)[i];
+        (*triangles[0])[i] = t;
+        AABBs[0].expandBy(getTriBB(t));
     }
+
+    AABBs[1] = getTriBB( (*tris)[s.index] );
+    triangles[1] = new std::vector<TriInd>(tris->size()-s.index);
+    for (std::size_t i = s.index; i < tris->size(); ++i)
+    {
+        TriInd t = (*tris)[i];
+        (*triangles[1])[i-s.index] = t;
+        AABBs[1].expandBy(getTriBB( t ));
+    }
+
+
+    //std::cout << AABBs[0].toString() << " " << AABBs[1].toString() << std::endl;
+
+    Node* n = new Node(bb, nullptr, s.dim);
 #if PARALLEL
-    tbb::parallel_for(int(0), 8,
-                      [=](int i)
-                      {
-                          for (auto tri: *tris) {
-                              //Check if triangle in AABB i
-                              if (triIntersects(AABBs[i], tri))
-                              {
-                                  triangles[i]->push_back(tri);
-                              }
-                          }
-                      });
-#else
-    for (auto tri: *tris)
-{
-for (int i = 0; i < 8; ++i)
-{
-    //Check if triangle in AABB i
-    if (triIntersects(AABBs[i], tri))
-    {
-        triangles[i]->push_back(tri);
-    }
-}
-}
-#endif
-
-    //try to avoid situation where more nodes doesnt change anything
-    //Usually only useful if going over depth ~15+, which this does not
-    bool allSame = true;
-    for(auto & t : triangles)
-    {
-        if (t->size() != tris->size())
-        {
-            allSame = false;
-            break;
-        }
-    }
-    if(allSame)
-    {
-        for(auto & t : triangles)
-        {
-            delete t;
-        }
-        return new Node(bb, tris);
-    }
-
-    Node* n = new Node(bb, nullptr);
-#if PARALLEL
-    tbb::parallel_for(int(0), 8,
+    tbb::parallel_for(int(0), 2,
                       [=](int i)
                       {n->children[i] = build(AABBs[i], triangles[i], depth + 1);});
 #else
-    for (int i = 0; i < 8; ++i)
-{
-n->children[i] = build(AABBs[i], triangles[i], depth + 1);
-}
+    for (int i = 0; i < 2; ++i)
+    {
+        n->children[i] = build(AABBs[i], triangles[i], depth + 1);
+    }
 #endif
 
     //we arent using this specific vector anymore, so delete it
@@ -142,20 +121,12 @@ BVH::TriInd BVH::rayIntersect(const nori::Ray3f &ray_, nori::Intersection &its, 
 
 }
 
-bool BVH::triIntersects(const BoundingBox3f& bb, const TriInd& tri)
-{
-    return bb.overlaps(meshes[tri.mesh]->getBoundingBox(tri.i));
-}
-
-
-BVH::TriInd BVH::leafRayTriIntersect(Node *n, const nori::Ray3f &ray_, nori::Intersection &its,
+BVH::TriInd BVH::leafRayTriIntersect(Node *n, nori::Ray3f &ray, nori::Intersection &its,
                                            bool shadowRay) const
 {
-    //if(!n->isLeaf() || n->tris == nullptr) return {};
-
     TriInd f = {};      // Triangle index of the closest intersection
 
-    Ray3f ray(ray_); /// Make a copy of the ray (we will need to update its '.maxt' value)
+    //Ray3f ray(ray_); /// Make a copy of the ray (we will need to update its '.maxt' value)
 
     /* Brute force search through all triangles */
     for (auto idx : *(n->tris)) {
@@ -175,67 +146,169 @@ BVH::TriInd BVH::leafRayTriIntersect(Node *n, const nori::Ray3f &ray_, nori::Int
     return f;
 }
 
-BVH::TriInd BVH::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray_, nori::Intersection &its,
+BVH::TriInd BVH::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray, nori::Intersection &its,
                                              bool shadowRay) const
 {
-    if (n == nullptr) return {};
-    if (n->isLeaf()) return leafRayTriIntersect(n, ray_, its, shadowRay);
+    Node* stack[MAX_DEPTH + 1];
+    ///Whether this node in the stack actually intersects the ray
+    bool intersects[MAX_DEPTH + 1];
+    ///Stack index
+    int si = 0;
 
-    //1. Get all the child nodes that the ray intersects
-    NodeComp ints[8];
-    uint32_t totalInts = 0;
+    TriInd closeTri = {};
+    Ray3f ray_(ray); /// Make a copy of the ray (we will need to update its '.maxt' value)
 
-    for (auto c : n->children)
+    float close, far;
+    stack[0] = n;
+    intersects[0] = n->AABB.rayIntersect(ray_, close, far);
+    while(si >= 0)
     {
-        if (c != nullptr)
-        {
-            float close, far;
-            if(c->AABB.rayIntersect(ray_, close, far))
+        Node* cur = stack[si];
+        bool goodBB = intersects[si];
+        --si;
+        if(cur == nullptr || !goodBB) continue;
+
+        if (cur->isLeaf())
+        { //Since this node is "first", it MUST be the closest
+            TriInd inter = leafRayTriIntersect(cur, ray_, its, shadowRay);
+            if(inter.isValid())
             {
-                ints[totalInts] = {close, c};
-                totalInts++;
+                closeTri = inter;
             }
         }
-    }
+        else
+        {
+            //1. Get all the child nodes that the ray intersects
+            float dists[2]{ray_.maxt,ray_.maxt}; //large values, not too important
+            bool valid[2]{false,false};
 
-    //Sort child nodes by close first
-    std::sort(ints,ints+totalInts);
+            for (int i = 0; i < 2; ++i)
+            {
+                Node* c = cur->children[i];
+                if (c != nullptr)
+                {
+                    if(c->AABB.rayIntersect(ray_, close, far))
+                    {
+                        dists[i] = close;
+                        valid[i] = true;
+                    }
+                }
+            }
 
-    //2. Search for triangles in child nodes
-    //Go through valid child nodes only (Starting with closest)
-    for(uint32_t i = 0; i < totalInts; ++i)
-    {
-        Node* c = ints[i].n;
-        TriInd interPlace = nodeCloseTriIntersect(c, ray_, its, shadowRay);
-        if (interPlace.isValid())
-        { //Found a triangle !!! (also quick terminate)
-            return interPlace;
+            if(ray.d[cur->dim] >= 0)// dists[0] < dists[1])
+            { //0 node closer (or just invalid idk)
+                ++si;
+                stack[si] = cur->children[1];
+                intersects[si] = valid[1];
+                ++si;
+                stack[si] = cur->children[0];
+                intersects[si] = valid[0];
+            }
+            else
+            {//1 node is closer
+                ++si;
+                stack[si] = cur->children[0];
+                intersects[si] = valid[0];
+                ++si;
+                stack[si] = cur->children[1];
+                intersects[si] = valid[1];
+            }
+
         }
+
     }
 
-    return {};
+    return closeTri;
 }
 
-BoundingBox3f BVH::childBB(const nori::BoundingBox3f& bb, uint index) {
-    /*
-                    (TR/max)
-       z____________
-       /  6  /  7  /|
-      /_____/_____/ |
-    y/  2  /  3  /|7/
-    /_____/_____/ |/|
-    |  2  |  3  |3/5/
-    |_____|_____|/|/
-    |  0  |  1  |1/
-    |_____|_____|/ x
-    (BL/min)
-    */
-    Vector3f middle = bb.getCenter();
-    Vector3f diff = middle - bb.min;
-    Vector3f adding = Vector3f((float)(index%2) * diff.x(),(float)((index/2)%2) * diff.y(),(float)((index/4)%2) * diff.z());
-    return {bb.min + adding, middle + adding};
+BVH::SplitData BVH::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *tris) const {
+    float minSAH = TRI_INT_COST*tris->size() + 1;
+    int bestD = -1;
+    std::vector<TriInd> bestDCopy;
+
+    std::size_t bestI = 0;
+    BoundingBox3f bestBB1, bestBB2;
+
+    //The size of the AABB
+    //Vector3f sz = bb.max-bb.min;
+    float totTriCost = tris->size()*TRI_INT_COST;
+    ///SA of the whole BB
+    float bbSA = bb.getSurfaceArea();
+
+    //Dimension loop
+    for (int d = 0; d < 3; ++d) {
+        //AXIS constants
+        //int d2 = (d+1)%3, d3 = (d+2)%3;
+
+        //Try with the min axis bounds
+        sortOnDim(tris, d);
+
+        ///All of the bounding boxes for the second node (first node can be computed on the fly)
+        std::vector<BoundingBox3f> backAABBs(tris->size()-1);
+        backAABBs[tris->size()-2] = getTriBB((*tris)[tris->size()-1]); //last bb should just be the single triangle
+        for (int i = tris->size()-3; i >= 0; --i)
+        {
+            backAABBs[i] = backAABBs[i+1];
+            backAABBs[i].expandBy(getTriBB((*tris)[i+1]));
+        }
+
+        BoundingBox3f curBB = getTriBB((*tris)[0]);
+        float lCost = -TRI_INT_COST;
+        float hCost = totTriCost+TRI_INT_COST;
+        for (std::size_t i = 0; i < tris->size()-1; ++i) {
+
+            //Update/expand the BB!
+            TriInd t = (*tris)[i];
+            //Mesh *mesh = meshes[t.mesh];
+            curBB.expandBy(getTriBB(t));
+
+            lCost += TRI_INT_COST;
+            hCost -= TRI_INT_COST;
+
+            float sah = TRAVERSAL_TIME + (curBB.getSurfaceArea() * lCost +
+                                          backAABBs[i].getSurfaceArea() * hCost) / bbSA;
+            //std::cout << "Dim " << d << ", lCost " << lCost << ", hCost " << hCost << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
+            //std::cout << "BBSA " << bbSA << ", cur " << curBB.getSurfaceArea() << ", back " << backAABBs[i].getSurfaceArea() << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
+
+            if (sah <= minSAH) {
+                //std::cout << "Dim " << d << ", lCost " << lCost << ", hCost " << hCost << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
+                //std::cout << "BBSA " << bbSA << ", cur " << curBB.getSurfaceArea() << ", back " << backAABBs[i].getSurfaceArea() << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
+                minSAH = sah;
+                if (bestD != d)
+                {
+                    bestD = d;
+                    bestDCopy = *tris;
+                }
+                bestI = i;
+                bestBB1 = curBB;
+                bestBB2 = backAABBs[i];
+            }
+
+        }
+
+    }
+
+    //Sort tris to be for the correct dimension
+    //if (bestD != 2) sortOnDim(tris, bestD);
+
+    //If the SAH isnt better than just no split, then dont split (invalid split return)
+    if (minSAH < TRI_INT_COST*tris->size())
+    {
+        if (bestD != 2) *tris = bestDCopy;
+        return {bestI+1, bestD, bestBB1, bestBB2};
+    }
+    else
+    {
+        return {(std::size_t) -1, -1, {},{}};
+    }
+
 }
 
-
+void BVH::sortOnDim(std::vector<TriInd> *tris, int d) const{
+    std::sort(tris->begin(), tris->end(), [d, this](const TriInd &a, const TriInd &b) {
+        return this->meshes[a.mesh]->getCentroid(a.i)[d] <
+                this->meshes[b.mesh]->getCentroid(b.i)[d];
+    });
+}
 
 NORI_NAMESPACE_END

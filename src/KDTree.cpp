@@ -8,7 +8,7 @@
 #include <tbb/parallel_for.h>
 
 //Set to true for parallel construction of KD-Tree
-#define PARALLEL true
+#define KD_PARALLEL true
 //Time W/O Parallel (set to false): ~ MS
 //Time W/ Parallel (set to true):   ~ MS
 
@@ -78,7 +78,7 @@ KDTree::Node *KDTree::build(const BoundingBox3f& bb, std::vector<TriInd> *tris, 
     triangles[0] = new std::vector<TriInd>();
     AABBs[1] = highBB(bb, s);
     triangles[1] = new std::vector<TriInd>();
-#if PARALLEL
+#if KD_PARALLEL
     tbb::parallel_for(int(0), 2,
                       [=](int i)
                       {
@@ -104,28 +104,8 @@ KDTree::Node *KDTree::build(const BoundingBox3f& bb, std::vector<TriInd> *tris, 
     }
 #endif
 
-    //try to avoid situation where more nodes doesnt change anything
-    //Usually only useful if going over depth ~15+, which this does not
-    bool allSame = true;
-    for(auto & t : triangles)
-    {
-        if (t->size() != tris->size())
-        {
-            allSame = false;
-            break;
-        }
-    }
-    if(allSame)
-    {
-        for(auto & t : triangles)
-        {
-            delete t;
-        }
-        return new Node(bb, tris);
-    }
-
     Node* n = new Node(bb, nullptr);
-#if PARALLEL
+#if KD_PARALLEL
     tbb::parallel_for(int(0), 2,
                       [=](int i)
                       {n->children[i] = build(AABBs[i], triangles[i], depth + 1);});

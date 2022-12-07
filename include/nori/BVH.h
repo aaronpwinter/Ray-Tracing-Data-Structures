@@ -4,141 +4,147 @@
 
 #pragma once
 
-///The upper bound for triangles in a node that stops the node from subdividing.
-#define FEW_TRIS 10
-#define MAX_DEPTH 10
-
-
 #include "nori/AccelTree.h"
 
 NORI_NAMESPACE_BEGIN
 
-    class BVH: public AccelTree
+class BVH: public AccelTree
+{
+public:
+    ///The upper bound for triangles in a node that stops the node from subdividing.
+    static constexpr std::size_t FEW_TRIS = 10;
+    int MAX_DEPTH = 100;
+
+    ///The "time" to traverse a node. Used in SAH.
+    static constexpr float TRAVERSAL_TIME = 1;
+    static constexpr float TRI_INT_COST = 2;
+
+public:
+
+    /// A node for the BVH, which contains 2 children, stores its own AABB,
+    ///     and a vector of triangle indices.
+    struct Node
     {
-    public:
-
-        /// A node for the Octree, which contains 8 children, stores its own AABB,
-        ///     and a vector of triangle indices.
-        struct Node
+        Node(BoundingBox3f bb, std::vector<TriInd>* triangles, int d):
+                AABB(bb), tris(triangles), dim(d)
         {
-            Node(BoundingBox3f bb, std::vector<TriInd>* triangles)
-            {
-                for (int i = 0; i < 8; ++i)
-                {
-                    children[i] = nullptr;
-                }
-                AABB = bb;
-                tris = triangles;
-            }
-
-            ~Node()
-            {
-                for (auto & c : children)
-                {
-                    delete c;
-                }
-                delete tris;
-
-            }
-
-            bool isLeaf() const
-            {
-                return tris != nullptr;
-            }
-
-            uint32_t nodeCount() const
-            {
-                uint32_t count = 1;
-                for (auto & i : children)
-                {
-                    if (i != nullptr)
-                    {
-                        count += i->nodeCount();
-                    }
-                }
-
-                return count;
-            }
-
-            uint32_t triCount() const
-            {
-                if(isLeaf() && tris != nullptr) return tris->size();
-
-                uint32_t count = 0;
-                for (auto & i : children)
-                {
-                    if (i != nullptr)
-                    {
-                        count += i->triCount();
-                    }
-                }
-
-                return count;
-            }
-
-            Node* children[2];
-            BoundingBox3f AABB;
-            //The indices of the triangles in the mesh. If nullptr this is not a leaf node
-            std::vector<TriInd>* tris;
-        };
-
-        /// A simple struct for holding a float and a Node, used for sorting.
-        struct NodeComp
-        {
-            NodeComp(): dist(0), n(nullptr) {};
-            NodeComp(float d, Node* n): dist(d), n(n) {};
-
-            bool operator<(const NodeComp& right) const
-            {
-                return dist < right.dist;
-            }
-
-            float dist;
-            Node* n;
-        };
-
-    public:
-        ~BVH() override
-        {
-            delete root;
+            children[0] = nullptr;
+            children[1] = nullptr;
         }
 
-        void build() override;
+        ~Node()
+        {
+            for (auto & c : children)
+            {
+                delete c;
+            }
+            delete tris;
 
-        TriInd rayIntersect(const Ray3f &ray_, Intersection &its, bool shadowRay) const override;
+        }
 
-        /// Returns the bounding box for the child node at the specified index.
-        /// \param bb The Bounding Box of the parent node
-        /// \param index The index of this child within the parent node
-        /// \return The bounding box of the child node
-        static BoundingBox3f childBB(const BoundingBox3f& bb, uint index);
+        bool isLeaf() const
+        {
+            return tris != nullptr;
+        }
 
-    private:
-        Node* build(const BoundingBox3f& bb, std::vector<TriInd>* tris, int depth);
+        uint32_t nodeCount() const
+        {
+            uint32_t count = 1;
+            for (auto & i : children)
+            {
+                if (i != nullptr)
+                {
+                    count += i->nodeCount();
+                }
+            }
 
-        bool triIntersects(const BoundingBox3f& bb, const TriInd& tri);
+            return count;
+        }
 
-        /// Searches through all the triangles in a leaf node for the closest intersection, and
-        ///     returns that triangle index. Returns -1 on no intersection
-        /// \param n The LEAF node to look through.
-        /// \param ray The ray
-        /// \param its Intersection
-        /// \param shadowRay If this is a shadow ray query
-        /// \return TriInd of triangle in the meshes on intersection, or -1 on none.
-        TriInd leafRayTriIntersect(Node* n, const Ray3f& ray_, Intersection &its, bool shadowRay) const;
+        uint32_t triCount() const
+        {
+            if(isLeaf() && tris != nullptr) return tris->size();
 
-        /// Searches through all the triangles in a node for the closest intersection, and
-        ///     returns that triangle index. Returns -1 on no intersection
-        /// \param n The node to look through.
-        /// \param ray The ray
-        /// \param its Intersection
-        /// \param shadowRay If this is a shadow ray query
-        /// \return TriInd of triangle in the meshes on intersection, or -1 on none.
-        TriInd nodeCloseTriIntersect(Node* n, const Ray3f& ray_, Intersection &its, bool shadowRay) const;
+            uint32_t count = 0;
+            for (auto & i : children)
+            {
+                if (i != nullptr)
+                {
+                    count += i->triCount();
+                }
+            }
 
-    private:
-        Node* root;
+            return count;
+        }
 
+        Node* children[2];
+        BoundingBox3f AABB;
+        //The indices of the triangles in the mesh. If nullptr this is not a leaf node
+        std::vector<TriInd>* tris;
+
+        /// The dimension of the split.
+        int dim;
     };
+
+public:
+    ~BVH() override
+    {
+        delete root;
+    }
+
+    void build() override;
+
+    TriInd rayIntersect(const Ray3f &ray_, Intersection &its, bool shadowRay) const override;
+
+private:
+    Node* build(const BoundingBox3f& bb, std::vector<TriInd>* tris, int depth);
+
+    /// Searches through all the triangles in a leaf node for the closest intersection, and
+    ///     returns that triangle index. Returns -1 on no intersection
+    /// \param n The LEAF node to look through.
+    /// \param ray The ray
+    /// \param its Intersection
+    /// \param shadowRay If this is a shadow ray query
+    /// \return TriInd of triangle in the meshes on intersection, or -1 on none.
+    TriInd leafRayTriIntersect(Node* n, Ray3f& ray_, Intersection &its, bool shadowRay) const;
+
+    /// Searches through all the triangles in a node for the closest intersection, and
+    ///     returns that triangle index. Returns -1 on no intersection
+    /// \param n The node to look through.
+    /// \param ray The ray
+    /// \param its Intersection
+    /// \param shadowRay If this is a shadow ray query
+    /// \return TriInd of triangle in the meshes on intersection, or -1 on none.
+    TriInd nodeCloseTriIntersect(Node* n, const Ray3f& ray, Intersection &its, bool shadowRay) const;
+
+    /// A struct that holds all the needed data from a split
+    struct SplitData
+    {
+        std::size_t index;
+        int dim;
+        BoundingBox3f bb1;
+        BoundingBox3f bb2;
+    };
+
+    /// Returns an optimal index for the list, tris. Tris is sorted for the correct
+    ///     axis that should be split on.
+    /// \param bb The AABB bounding the triangles.
+    /// \param tris The triangles within the AABB. Will be sorted to the correct axis.
+    /// \return The index in tris where the split happens. First half does not include this value.
+    SplitData getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *tris) const;
+
+    BoundingBox3f getTriBB(const TriInd& t) const{
+        return meshes[t.mesh]->getBoundingBox(t.i);
+    }
+
+    /// Sort a vector of triangle indicies, triind, by their center coordinate over dimension d
+    /// \param tris Triangle index vector. Will be sorted/edited in place.
+    /// \param d The dimension (0 = x, 1 = y, ...)
+    void sortOnDim(std::vector<TriInd> *tris, int d) const;
+
+private:
+    Node* root;
+
+};
 
 NORI_NAMESPACE_END
