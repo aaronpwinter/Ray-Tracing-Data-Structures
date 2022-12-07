@@ -47,14 +47,7 @@ void BVH::build() {
     std::cout << "BVH Construction Time: " << durT.count() << " MS" << endl;
 }
 BVH::Node *BVH::build(const nori::BoundingBox3f& bb, std::vector<TriInd> *tris, int depth)
-{//No Triangles
-    if (tris == nullptr) return nullptr;
-    if (tris->empty())
-    {
-        delete tris;
-        return nullptr;
-    }
-
+{
     //Few triangles
     if (tris->size() <= FEW_TRIS || depth >= MAX_DEPTH)
     {
@@ -161,9 +154,9 @@ BVH::TriInd BVH::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray, nori::In
     while(si >= 0)
     {
         Node* cur = stack[si];
-        bool goodBB = cur->AABB.rayIntersect(ray_, close, far);
         --si;
-        if(cur == nullptr || !goodBB) continue;
+
+        if(!cur->AABB.rayIntersect(ray_, close, far)) continue;
 
         if (cur->isLeaf())
         { //Since this node is "first", it MUST be the closest
@@ -171,13 +164,14 @@ BVH::TriInd BVH::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray, nori::In
             if(inter.isValid())
             {
                 closeTri = inter;
+                //return closeTri;
             }
         }
         else
         {
             ///Add the two child nodes in order
-            if(ray.d[cur->dim] >= 0)// dists[0] < dists[1])
-            { //0 node closer (or just invalid idk)
+            if(ray.d[cur->dim] >= 0)// dists[0] < dists[1]
+            { //0 node closer theoretically
                 ++si;
                 stack[si] = cur->children[1];
                 ++si;
