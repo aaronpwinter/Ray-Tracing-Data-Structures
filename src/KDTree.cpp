@@ -386,6 +386,7 @@ KDTree::Split KDTree::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> 
         //If the SAH isnt better than just no split, then dont split (invalid split return)
         return minSAH < TRI_INT_COST*tris->size() ? bestS : Split{x, -1};
     }
+
     else if (method == Midpoint)
     {
         //DUMMY TRIVIAL IMPLEMENTATION
@@ -394,17 +395,10 @@ KDTree::Split KDTree::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> 
         //The size of the AABB
         Vector3f sz = bb.max - bb.min;
         int dimension = bb.getMajorAxis();
-        /*
-        dim dimension;
-        if(sz.x() >= sz.y() && sz.x() >= sz.z())
-            dimension = x;
-        else if (sz.y() >= sz.z())
-            dimension = y;
-        else
-            dimension = z;
-        */
+
         return {dimension, sz[dimension] / 2};
     }
+
     else
     {
         std::cout << "Split method " << method << " not yet implemented!" << std::endl;

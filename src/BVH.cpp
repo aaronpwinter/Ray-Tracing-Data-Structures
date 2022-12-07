@@ -240,29 +240,17 @@ BVH::SplitData BVH::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *t
         //If the SAH isnt better than just no split, then dont split (invalid split return)
         if (minSAH < TRI_INT_COST * tris->size()) {
             bestI++;
-            auto tris1 = new std::vector<TriInd>;
-            tris1->reserve(bestI);
-            auto tris2 = new std::vector<TriInd>;
-            tris2->reserve(tris->size() - bestI);
+
+            std::vector<TriInd> *tris1, *tris2;
             if (bestD != 2)
             { //used the copied dimension vector
-                for (std::size_t i = 0; i < bestI; ++i) {
-                    tris1->push_back(bestDCopy[i]);
-                }
-
-                for (std::size_t i = bestI; i < tris->size(); ++i) {
-                    tris2->push_back(bestDCopy[i]);
-                }
+                tris1 = new std::vector<TriInd>(bestDCopy.begin(), bestDCopy.begin()+bestI);
+                tris2 = new std::vector<TriInd>(bestDCopy.begin()+bestI, bestDCopy.end());
             }
             else
             {//use the currently sorted dimension vector
-                for (std::size_t i = 0; i < bestI; ++i) {
-                    tris1->push_back((*tris)[i]);
-                }
-
-                for (std::size_t i = bestI; i < tris->size(); ++i) {
-                    tris2->push_back((*tris)[i]);
-                }
+                tris1 = new std::vector<TriInd>(tris->begin(), tris->begin()+bestI);
+                tris2 = new std::vector<TriInd>(tris->begin()+bestI, tris->end());
             }
 
             return {bestI, bestD, bestBB1, bestBB2, tris1, tris2};
