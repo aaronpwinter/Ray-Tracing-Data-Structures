@@ -23,16 +23,16 @@ void BVH::build(SplitMethod method) {
     built = true;
 
     //Collect all triangles
-    uint triCt = 0;
+    uint32_t triCt = 0;
     for(auto mesh: meshes)
     {
         triCt += mesh->getTriangleCount();
     }
     auto tris = new std::vector<TriInd>(triCt);
-    uint curInd = 0;
-    for(uint i = 0; i < meshes.size(); ++i)
+    std::size_t curInd = 0;
+    for(std::size_t i = 0; i < meshes.size(); ++i)
     {
-        for(uint t = 0; t < meshes[i]->getTriangleCount(); ++t)
+        for(uint32_t t = 0; t < meshes[i]->getTriangleCount(); ++t)
         {
             (*tris)[curInd] = TriInd(i, t);
             ++curInd;

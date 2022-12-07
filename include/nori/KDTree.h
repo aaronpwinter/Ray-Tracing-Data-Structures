@@ -14,7 +14,7 @@ class KDTree: public AccelTree
 public:
     ///The upper bound for triangles in a node that stops the node from subdividing.
     static constexpr std::size_t FEW_TRIS = 10;
-     int MAX_DEPTH = 100;
+    static constexpr int MAX_DEPTH = 100;
 
     ///The "time" to traverse a node. Used in SAH.
     static constexpr float TRAVERSAL_TIME = 1;
