@@ -24,7 +24,7 @@ void KDTree::build(SplitMethod method) {
     {
         triCt += mesh->getTriangleCount();
     }
-    std::vector<TriInd>* tris = new std::vector<TriInd>(triCt);
+    auto tris = new std::vector<TriInd>(triCt);
     uint32_t curInd = 0;
     for(std::size_t i = 0; i < meshes.size(); ++i)
     {
@@ -131,7 +131,7 @@ KDTree::Node *KDTree::build(const BoundingBox3f& bb, std::vector<TriInd> *tris, 
 #else
     for (int i = 0; i < 2; ++i)
     {
-        n->children[i] = build(AABBs[i], triangles[i], depth + 1);
+        n->children[i] = build(AABBs[i], triangles[i], depth + 1, method);
     }
 #endif
 

@@ -8,7 +8,7 @@
 #include <tbb/parallel_for.h>
 
 //Set to true for parallel construction of Octree
-#define PARALLEL true
+#define OCT_PARALLEL true
 //Time W/O Parallel (set to false): ~1100 MS
 //Time W/ Parallel (set to true):   ~ 500 MS - Cool!
 
@@ -71,7 +71,7 @@ nori::Octree::Node *nori::Octree::build(const nori::BoundingBox3f& bb, std::vect
         AABBs[i] = childBB(bb, i);
         triangles[i] = new std::vector<TriInd>();
     }
-#if PARALLEL
+#if OCT_PARALLEL
     tbb::parallel_for(int(0), 8,
                       [=](int i)
                       {
@@ -118,7 +118,7 @@ nori::Octree::Node *nori::Octree::build(const nori::BoundingBox3f& bb, std::vect
     }
 
     Node* n = new Node(bb, nullptr);
-#if PARALLEL
+#if OCT_PARALLEL
     tbb::parallel_for(int(0), 8,
                       [=](int i)
                       {n->children[i] = build(AABBs[i], triangles[i], depth + 1);});

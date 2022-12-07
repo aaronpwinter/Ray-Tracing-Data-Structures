@@ -8,7 +8,7 @@
 #include <tbb/parallel_for.h>
 
 //Set to true for parallel construction of BVH
-#define PARALLEL true
+#define BVH_PARALLEL true
 //Time W/O Parallel (set to false): ~ MS
 //Time W/ Parallel (set to true):   ~ MS
 
@@ -28,7 +28,7 @@ void BVH::build(SplitMethod method) {
     {
         triCt += mesh->getTriangleCount();
     }
-    std::vector<TriInd>* tris = new std::vector<TriInd>(triCt);
+    auto tris = new std::vector<TriInd>(triCt);
     uint curInd = 0;
     for(uint i = 0; i < meshes.size(); ++i)
     {
@@ -73,14 +73,14 @@ BVH::Node *BVH::build(const nori::BoundingBox3f& bb, std::vector<TriInd> *tris, 
     std::vector<TriInd>* triangles[2]{s.tris1,s.tris2};
 
     Node* n = new Node(bb, nullptr, s.dim);
-#if PARALLEL
+#if BVH_PARALLEL
     tbb::parallel_for(int(0), 2,
                       [=](int i)
                       {n->children[i] = build(AABBs[i], triangles[i], depth + 1, method);});
 #else
     for (int i = 0; i < 2; ++i)
     {
-        n->children[i] = build(AABBs[i], triangles[i], depth + 1);
+        n->children[i] = build(AABBs[i], triangles[i], depth + 1, method);
     }
 #endif
 
@@ -199,7 +199,7 @@ BVH::SplitData BVH::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *t
             std::vector<BoundingBox3f> backAABBs(tris->size() - 1);
             backAABBs[tris->size() - 2] = getTriBB(
                     (*tris)[tris->size() - 1]); //last bb should just be the single triangle
-            for (int i = tris->size() - 3; i >= 0; --i) {
+            for (long i = (long)tris->size() - 3; i >= 0; --i) {
                 backAABBs[i] = backAABBs[i + 1];
                 backAABBs[i].expandBy(getTriBB((*tris)[i + 1]));
             }
@@ -322,8 +322,8 @@ BVH::SplitData BVH::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *t
                 lCost += dimBuckets[d][i].size();
                 hCost -= dimBuckets[d][i].size();
 
-                float sah = TRAVERSAL_TIME + TRI_INT_COST*(curBB.getSurfaceArea() * lCost +
-                                              backAABBs[i].getSurfaceArea() * hCost) / bbSA;
+                float sah = TRAVERSAL_TIME + TRI_INT_COST*(curBB.getSurfaceArea() * (float)lCost +
+                                              backAABBs[i].getSurfaceArea() * (float)hCost) / bbSA;
 
                 if (sah <= minSAH) {
                     //std::cout << "Dim " << d << ", lCost " << lCost << ", hCost " << hCost << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
