@@ -14,7 +14,7 @@
 
 NORI_NAMESPACE_BEGIN
 
-void KDTree::build() {
+void KDTree::build(SplitMethod method) {
     if(built) return;
     built = true;
 
@@ -37,7 +37,7 @@ void KDTree::build() {
 
     //Build (& time) KD-Tree
     auto startT = std::chrono::high_resolution_clock::now();
-    root = build(bbox, tris, 0);
+    root = build(bbox, tris, 0, method);
     auto endT = std::chrono::high_resolution_clock::now();
     auto durT = std::chrono::duration_cast<std::chrono::milliseconds>(endT-startT);
 
@@ -46,7 +46,8 @@ void KDTree::build() {
     std::cout << "Nodes: " << root->nodeCount() << ", Tree Stored Tris: " << root->triCount() << ", Mesh Tris: " << triCt << std::endl;
     std::cout << "KD-Tree Construction Time: " << durT.count() << " MS" << endl;
 }
-KDTree::Node *KDTree::build(const BoundingBox3f& bb, std::vector<TriInd> *tris, int depth)
+KDTree::Node *KDTree::build(const BoundingBox3f& bb, std::vector<TriInd> *tris, int depth,
+                            SplitMethod method)
 {//No Triangles
     if (tris == nullptr) return nullptr;
     if (tris->empty())
@@ -58,15 +59,15 @@ KDTree::Node *KDTree::build(const BoundingBox3f& bb, std::vector<TriInd> *tris, 
     //Few triangles
     if (tris->size() <= FEW_TRIS || depth >= MAX_DEPTH)
     {
-        return new Node(bb, tris);
+        return new Node(bb, tris, {});
     }
 
-    Split s = getGoodSplit(bb, tris);
+    Split s = getGoodSplit(bb, tris, method);
 
     if(!s.isValid())
     { //No advantage to splitting
         //std::cout << "invalid" << std::endl;
-        return new Node(bb, tris);
+        return new Node(bb, tris, s);
     }
 
     //Set up AABBs
@@ -104,11 +105,29 @@ KDTree::Node *KDTree::build(const BoundingBox3f& bb, std::vector<TriInd> *tris, 
     }
 #endif
 
-    Node* n = new Node(bb, nullptr);
+    if (method == Midpoint)
+    {
+        //try to avoid situation where more nodes doesnt change anything
+        bool allSame = true;
+        for (auto &t : triangles) {
+            if (t->size() != tris->size()) {
+                allSame = false;
+                break;
+            }
+        }
+        if (allSame) {
+            for (auto &t : triangles) {
+                delete t;
+            }
+            return new Node(bb, tris, {});
+        }
+    }
+
+    Node* n = new Node(bb, nullptr, s);
 #if KD_PARALLEL
     tbb::parallel_for(int(0), 2,
                       [=](int i)
-                      {n->children[i] = build(AABBs[i], triangles[i], depth + 1);});
+                      {n->children[i] = build(AABBs[i], triangles[i], depth + 1, method);});
 #else
     for (int i = 0; i < 2; ++i)
     {
@@ -228,20 +247,16 @@ KDTree::TriInd KDTree::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray_, n
     return {};
 #else
     Node* stack[MAX_DEPTH + 1];
-    ///Whether this node in the stack actually intersects the ray
-    bool intersects[MAX_DEPTH + 1];
     ///Stack index
     int si = 0;
 
     float close, far;
     stack[0] = n;
-    intersects[0] = n->AABB.rayIntersect(ray_, close, far);
     while(si >= 0)
     {
         Node* cur = stack[si];
-        bool goodBB = intersects[si];
         --si;
-        if(cur == nullptr || !goodBB) continue;
+        if(cur == nullptr || !cur->AABB.rayIntersect(ray_, close, far)) continue;
 
         if (cur->isLeaf())
         { //Since this node is "first", it MUST be the closest
@@ -253,40 +268,19 @@ KDTree::TriInd KDTree::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray_, n
         }
         else
         {
-            //1. Get all the child nodes that the ray intersects
-            float dists[2]{999999,999999}; //large values, not too important
-            bool valid[2]{false,false};
-
-            for (int i = 0; i < 2; ++i)
-            {
-                Node* c = cur->children[i];
-                if (c != nullptr)
-                {
-                    if(c->AABB.rayIntersect(ray_, close, far))
-                    {
-                        dists[i] = close;
-                        valid[i] = true;
-                    }
-                }
-            }
-
-            if(dists[0] < dists[1])
+            if(ray_.d[cur->s.d] >= 0)
             { //0 node closer (or just invalid idk)
                 ++si;
                 stack[si] = cur->children[1];
-                intersects[si] = valid[1];
                 ++si;
                 stack[si] = cur->children[0];
-                intersects[si] = valid[0];
             }
             else
             {//1 node is closer
                 ++si;
                 stack[si] = cur->children[0];
-                intersects[si] = valid[0];
                 ++si;
                 stack[si] = cur->children[1];
-                intersects[si] = valid[1];
             }
 
         }
@@ -314,105 +308,108 @@ BoundingBox3f KDTree::highBB(const BoundingBox3f &bb, Split s) {
 }
 
 ///Whether the SAH is implemented or not. Also allows for speed comparisons.
-#define TRIVIAL_SPLIT false
-KDTree::Split KDTree::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *tris) const {
-
-#if TRIVIAL_SPLIT
-    //DUMMY TRIVIAL IMPLEMENTATION
-    //      SPLIT LONGEST DIMENSION IN 2
-
-    //The size of the AABB
-    Vector3f sz = bb.max-bb.min;
-    dim dimension;
-    if(sz.x() >= sz.y() && sz.x() >= sz.z())
-    {//X is the longest dimension currently
-        dimension = x;
-    }
-    else if (sz.y() >= sz.z())
-    {//Y is the longest dimension currently
-        dimension = y;
-    }
-    else
-    {//Z is the longest dimension currently
-        dimension = z;
-    }
-    Split triv(dimension, sz[dimension]/2);
-
-    return triv;
-#else
-
-    Split bestS;
-    float minSAH = TRI_INT_COST*tris->size() + 1;
-
-    //The size of the AABB
-    Vector3f sz = bb.max-bb.min;
-    float totTriCost = tris->size()*TRI_INT_COST;
-    ///SA of the whole BB
-    float bbSA = bb.getSurfaceArea();
-
-    //Construct an array with both start and end pts
-    std::vector<TriSAH> triPts(tris->size()*2);
-    for(std::size_t i = 0; i < tris->size(); ++i)
+KDTree::Split KDTree::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *tris,
+                                   SplitMethod method) const {
+    if (method == SAHFull)
     {
-        TriInd t = (*tris)[i];
-        //Min pt
-        triPts[i] = {t, getTriBB(t).min-bb.min, true};
-        //max pt
-        triPts[tris->size()+i] = {t, getTriBB(t).max-bb.min, false};
-    }
+
+        Split bestS;
+        float minSAH = TRI_INT_COST*tris->size() + 1;
+
+        //The size of the AABB
+        Vector3f sz = bb.max-bb.min;
+        float totTriCost = tris->size()*TRI_INT_COST;
+        ///SA of the whole BB
+        float bbSA = bb.getSurfaceArea();
+
+        //Construct an array with both start and end pts
+        std::vector<TriSAH> triPts(tris->size()*2);
+        for(std::size_t i = 0; i < tris->size(); ++i)
+        {
+            TriInd t = (*tris)[i];
+            //Min pt
+            triPts[i] = {t, getTriBB(t).min-bb.min, true};
+            //max pt
+            triPts[tris->size()+i] = {t, getTriBB(t).max-bb.min, false};
+        }
 
 
-    //Dimension loop
-    for (int d = 0; d < 3; ++d) {
-        //AXIS constants
-        int d2 = (d+1)%3, d3 = (d+2)%3;
+        //Dimension loop
+        for (int d = 0; d < 3; ++d)
+        {
+            //AXIS constants
+            int d2 = (d+1)%3, d3 = (d+2)%3;
 
-        //Some constants for use in upcoming calculations
-        //Plane ortho to axis surface area
-        float axSA = 2 * sz[d2] * sz[d3];
-        //basically the perimeter of above
-        float axDist = 2 * (sz[d2] + sz[d3]);
-        //A constant for the higher box
-        float axMaxConst = axSA + sz[d] * axDist;
+            //Some constants for use in upcoming calculations
+            //Plane ortho to axis surface area
+            float axSA = 2 * sz[d2] * sz[d3];
+            //basically the perimeter of above
+            float axDist = 2 * (sz[d2] + sz[d3]);
+            //A constant for the higher box
+            float axMaxConst = axSA + sz[d] * axDist;
 
-        //Try with the min axis bounds
-        std::sort(triPts.begin(), triPts.end(), [d](const TriSAH &a, const TriSAH &b) {
-            return a.pt[d] <
-                   b.pt[d];
-        });
-        float lCost = 0;
-        float hCost = totTriCost;
-        for (auto t: triPts) {
-            if(!t.min) hCost -= TRI_INT_COST;
+            //Try with the min axis bounds
+            std::sort(triPts.begin(), triPts.end(), [d](const TriSAH &a, const TriSAH &b) {
+                return a.pt[d] <
+                       b.pt[d];
+            });
+            float lCost = 0;
+            float hCost = totTriCost;
+            for (auto t: triPts) {
+                if(!t.min) hCost -= TRI_INT_COST;
 
-            if(0 < t.pt[d]  && t.pt[d] < sz[d]) {
-                ///Probability of intersecting the "lower" node
-                float pl = axSA + t.pt[d] * axDist;
+                if(0 < t.pt[d]  && t.pt[d] < sz[d]) {
+                    ///Probability of intersecting the "lower" node
+                    float pl = axSA + t.pt[d] * axDist;
 
-                ///Probability of intersecting the "higher" node
-                float ph = axMaxConst - t.pt[d] * axDist;
+                    ///Probability of intersecting the "higher" node
+                    float ph = axMaxConst - t.pt[d] * axDist;
 
-                float sah = TRAVERSAL_TIME + (pl * lCost + ph * hCost) / bbSA;
-                if (lCost == 0 || hCost == 0)
-                    sah *= EMPTY_MODIFIER;
+                    float sah = TRAVERSAL_TIME + (pl * lCost + ph * hCost) / bbSA;
+                    if (lCost == 0 || hCost == 0)
+                        sah *= EMPTY_MODIFIER;
 
-                if (sah <= minSAH) {
-                    //std::cout << "Dim " << d << ", lCost " << lCost << ", hCost " << hCost << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
-                    //std::cout << "BBSA " << bbSA << ", pt " << t.pt[d] << ", pl " << pl << ", ph " << ph << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
-                    minSAH = sah;
-                    bestS = {d, t.pt[d]};
+                    if (sah <= minSAH) {
+                        //std::cout << "Dim " << d << ", lCost " << lCost << ", hCost " << hCost << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
+                        //std::cout << "BBSA " << bbSA << ", pt " << t.pt[d] << ", pl " << pl << ", ph " << ph << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
+                        minSAH = sah;
+                        bestS = {d, t.pt[d]};
+                    }
                 }
-            }
 
-            if(t.min) lCost += TRI_INT_COST;
+                if(t.min) lCost += TRI_INT_COST;
+
+            }
 
         }
 
+        //If the SAH isnt better than just no split, then dont split (invalid split return)
+        return minSAH < TRI_INT_COST*tris->size() ? bestS : Split{x, -1};
     }
+    else if (method == Midpoint)
+    {
+        //DUMMY TRIVIAL IMPLEMENTATION
+        //      SPLIT LONGEST DIMENSION IN 2
 
-    //If the SAH isnt better than just no split, then dont split (invalid split return)
-    return minSAH < TRI_INT_COST*tris->size() ? bestS : Split{x, -1};
-#endif
+        //The size of the AABB
+        Vector3f sz = bb.max - bb.min;
+        int dimension = bb.getMajorAxis();
+        /*
+        dim dimension;
+        if(sz.x() >= sz.y() && sz.x() >= sz.z())
+            dimension = x;
+        else if (sz.y() >= sz.z())
+            dimension = y;
+        else
+            dimension = z;
+        */
+        return {dimension, sz[dimension] / 2};
+    }
+    else
+    {
+        std::cout << "Split method " << method << " not yet implemented!" << std::endl;
+        return {x,-1};
+    }
 
 }
 

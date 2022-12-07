@@ -19,7 +19,11 @@ public:
     static constexpr float TRAVERSAL_TIME = 1;
     static constexpr float TRI_INT_COST = 2;
 
+    /// The number of buckets in a SAH bucket-based construction
+    static constexpr std::size_t BUCKETS = 12;
+
 public:
+    enum SplitMethod{SAHFull, SAHBuckets, HLBVH};
 
     /// A node for the BVH, which contains 2 children, stores its own AABB,
     ///     and a vector of triangle indices.
@@ -92,12 +96,18 @@ public:
         delete root;
     }
 
-    void build() override;
+    void build() override
+    {
+        build(SAHBuckets);
+    }
+
+    void build(SplitMethod method);
 
     TriInd rayIntersect(const Ray3f &ray_, Intersection &its, bool shadowRay) const override;
 
 private:
-    Node* build(const BoundingBox3f& bb, std::vector<TriInd>* tris, int depth);
+    Node* build(const BoundingBox3f& bb, std::vector<TriInd>* tris, int depth,
+                SplitMethod method);
 
     /// Searches through all the triangles in a leaf node for the closest intersection, and
     ///     returns that triangle index. Returns -1 on no intersection
@@ -120,18 +130,26 @@ private:
     /// A struct that holds all the needed data from a split
     struct SplitData
     {
+        SplitData(): index((std::size_t)-1), dim(-1), bb1(), bb2(), tris1(nullptr), tris2(nullptr) {};
+        SplitData(std::size_t index, int dim,
+                  BoundingBox3f bb1, BoundingBox3f bb2,
+                  std::vector<TriInd> *tris1, std::vector<TriInd> *tris2):
+            index(index), dim(dim), bb1(bb1), bb2(bb2), tris1(tris1), tris2(tris2) {};
+
         std::size_t index;
         int dim;
         BoundingBox3f bb1;
         BoundingBox3f bb2;
+        std::vector<TriInd> *tris1;
+        std::vector<TriInd> *tris2;
     };
 
-    /// Returns an optimal index for the list, tris. Tris is sorted for the correct
-    ///     axis that should be split on.
+    /// Returns an optimal index for the list, tris. Tris is sorted over the z-axis.
     /// \param bb The AABB bounding the triangles.
-    /// \param tris The triangles within the AABB. Will be sorted to the correct axis.
-    /// \return The index in tris where the split happens. First half does not include this value.
-    SplitData getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *tris) const;
+    /// \param tris The triangles within the AABB. Is sorted over the z-axis.
+    /// \return All the information needed after a split. See SplitData
+    SplitData getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *tris,
+                           SplitMethod method) const;
 
     BoundingBox3f getTriBB(const TriInd& t) const{
         return meshes[t.mesh]->getBoundingBox(t.i);

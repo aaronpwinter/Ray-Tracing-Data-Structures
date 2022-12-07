@@ -12,9 +12,13 @@
 //Time W/O Parallel (set to false): ~ MS
 //Time W/ Parallel (set to true):   ~ MS
 
+/// For testing, if the ray intersection test should return upon first triangle hit
+/// Greatly improves speed, but decreases image accuracy
+#define QUICK_RETURN true
+
 NORI_NAMESPACE_BEGIN
 
-void BVH::build() {
+void BVH::build(SplitMethod method) {
     if(built) return;
     built = true;
 
@@ -37,7 +41,7 @@ void BVH::build() {
 
     //Build (& time) BVH
     auto startT = std::chrono::high_resolution_clock::now();
-    root = build(bbox, tris, 0);
+    root = build(bbox, tris, 0, method);
     auto endT = std::chrono::high_resolution_clock::now();
     auto durT = std::chrono::duration_cast<std::chrono::milliseconds>(endT-startT);
 
@@ -46,7 +50,7 @@ void BVH::build() {
     std::cout << "Nodes: " << root->nodeCount() << ", Tree Stored Tris: " << root->triCount() << ", Mesh Tris: " << triCt << std::endl;
     std::cout << "BVH Construction Time: " << durT.count() << " MS" << endl;
 }
-BVH::Node *BVH::build(const nori::BoundingBox3f& bb, std::vector<TriInd> *tris, int depth)
+BVH::Node *BVH::build(const nori::BoundingBox3f& bb, std::vector<TriInd> *tris, int depth, SplitMethod method)
 {
     //Few triangles
     if (tris->size() <= FEW_TRIS || depth >= MAX_DEPTH)
@@ -54,7 +58,7 @@ BVH::Node *BVH::build(const nori::BoundingBox3f& bb, std::vector<TriInd> *tris, 
         return new Node(bb, tris, -1);
     }
 
-    SplitData s = getGoodSplit(bb, tris);
+    SplitData s = getGoodSplit(bb, tris, method);
 
     if( s.dim == -1 )
     { //No advantage to splitting
@@ -66,31 +70,13 @@ BVH::Node *BVH::build(const nori::BoundingBox3f& bb, std::vector<TriInd> *tris, 
     //Set up AABBs
     BoundingBox3f AABBs[2]{s.bb1,s.bb2};
     //& Count up triangles into vector "triangles"
-    std::vector<TriInd>* triangles[2];
-
-
-    AABBs[0] = getTriBB( (*tris)[0] );
-    triangles[0] = new std::vector<TriInd>(s.index);
-    for (std::size_t i = 0; i < s.index; ++i) {
-        TriInd t = (*tris)[i];
-        (*triangles[0])[i] = t;
-        AABBs[0].expandBy(getTriBB(t));
-    }
-
-    AABBs[1] = getTriBB( (*tris)[s.index] );
-    triangles[1] = new std::vector<TriInd>(tris->size()-s.index);
-    for (std::size_t i = s.index; i < tris->size(); ++i)
-    {
-        TriInd t = (*tris)[i];
-        (*triangles[1])[i-s.index] = t;
-        AABBs[1].expandBy(getTriBB( t ));
-    }
+    std::vector<TriInd>* triangles[2]{s.tris1,s.tris2};
 
     Node* n = new Node(bb, nullptr, s.dim);
 #if PARALLEL
     tbb::parallel_for(int(0), 2,
                       [=](int i)
-                      {n->children[i] = build(AABBs[i], triangles[i], depth + 1);});
+                      {n->children[i] = build(AABBs[i], triangles[i], depth + 1, method);});
 #else
     for (int i = 0; i < 2; ++i)
     {
@@ -159,7 +145,9 @@ BVH::TriInd BVH::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray, nori::In
             if(inter.isValid())
             {
                 closeTri = inter;
-                //return closeTri;
+#if QUICK_RETURN
+                return closeTri;
+#endif
             }
         }
         else
@@ -187,78 +175,216 @@ BVH::TriInd BVH::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray, nori::In
     return closeTri;
 }
 
-BVH::SplitData BVH::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *tris) const {
-    float minSAH = TRI_INT_COST*tris->size() + 1;
-    int bestD = -1;
-    std::vector<TriInd> bestDCopy;
+BVH::SplitData BVH::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *tris,
+                                 SplitMethod method) const
+ {
+    if (method == SAHFull) {
+        float minSAH = TRI_INT_COST * tris->size() + 1;
+        int bestD = -1;
+        std::vector<TriInd> bestDCopy;
 
-    std::size_t bestI = 0;
-    BoundingBox3f bestBB1, bestBB2;
+        std::size_t bestI = 0;
+        BoundingBox3f bestBB1, bestBB2;
 
-    float totTriCost = tris->size()*TRI_INT_COST;
-    ///SA of the whole BB
-    float bbSA = bb.getSurfaceArea();
+        ///SA of the whole BB
+        float bbSA = bb.getSurfaceArea();
 
-    //Dimension loop
-    for (int d = 0; d < 3; ++d) {
+        //Dimension loop
+        for (int d = 0; d < 3; ++d) {
 
-        //Try with the min axis bounds
-        sortOnDim(tris, d);
+            //Try with the min axis bounds
+            sortOnDim(tris, d);
 
-        ///All of the bounding boxes for the second node (first node can be computed on the fly)
-        std::vector<BoundingBox3f> backAABBs(tris->size()-1);
-        backAABBs[tris->size()-2] = getTriBB((*tris)[tris->size()-1]); //last bb should just be the single triangle
-        for (int i = tris->size()-3; i >= 0; --i)
-        {
-            backAABBs[i] = backAABBs[i+1];
-            backAABBs[i].expandBy(getTriBB((*tris)[i+1]));
-        }
+            ///All of the bounding boxes for the second node (first node can be computed on the fly)
+            std::vector<BoundingBox3f> backAABBs(tris->size() - 1);
+            backAABBs[tris->size() - 2] = getTriBB(
+                    (*tris)[tris->size() - 1]); //last bb should just be the single triangle
+            for (int i = tris->size() - 3; i >= 0; --i) {
+                backAABBs[i] = backAABBs[i + 1];
+                backAABBs[i].expandBy(getTriBB((*tris)[i + 1]));
+            }
 
-        BoundingBox3f curBB = getTriBB((*tris)[0]);
-        float lCost = -TRI_INT_COST;
-        float hCost = totTriCost+TRI_INT_COST;
-        for (std::size_t i = 0; i < tris->size()-1; ++i) {
+            BoundingBox3f curBB = {};
+            float lCost = 0;
+            float hCost = tris->size() * TRI_INT_COST;
+            for (std::size_t i = 0; i < tris->size() - 1; ++i) {
 
-            //Update/expand the BB!
-            TriInd t = (*tris)[i];
-            curBB.expandBy(getTriBB(t));
+                //Update/expand the BB!
+                TriInd t = (*tris)[i];
+                curBB.expandBy(getTriBB(t));
 
-            lCost += TRI_INT_COST;
-            hCost -= TRI_INT_COST;
+                lCost += TRI_INT_COST;
+                hCost -= TRI_INT_COST;
 
-            float sah = TRAVERSAL_TIME + (curBB.getSurfaceArea() * lCost +
-                                          backAABBs[i].getSurfaceArea() * hCost) / bbSA;
+                float sah = TRAVERSAL_TIME + (curBB.getSurfaceArea() * lCost +
+                             backAABBs[i].getSurfaceArea() * hCost) / bbSA;
 
-            if (sah <= minSAH) {
-                //std::cout << "Dim " << d << ", lCost " << lCost << ", hCost " << hCost << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
-                //std::cout << "BBSA " << bbSA << ", cur " << curBB.getSurfaceArea() << ", back " << backAABBs[i].getSurfaceArea() << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
-                minSAH = sah;
-                if (bestD != d)
-                {
-                    bestD = d;
-                    bestDCopy = *tris;
+                if (sah <= minSAH) {
+                    //std::cout << "Dim " << d << ", lCost " << lCost << ", hCost " << hCost << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
+                    //std::cout << "BBSA " << bbSA << ", cur " << curBB.getSurfaceArea() << ", back " << backAABBs[i].getSurfaceArea() << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
+                    minSAH = sah;
+                    if (bestD != d) {
+                        bestD = d;
+                        if (d != 2)
+                            bestDCopy = *tris;
+                    }
+                    bestI = i;
+                    bestBB1 = curBB;
+                    bestBB2 = backAABBs[i];
                 }
-                bestI = i;
-                bestBB1 = curBB;
-                bestBB2 = backAABBs[i];
+
             }
 
         }
 
+        //If the SAH isnt better than just no split, then dont split (invalid split return)
+        if (minSAH < TRI_INT_COST * tris->size()) {
+            bestI++;
+            auto tris1 = new std::vector<TriInd>;
+            tris1->reserve(bestI);
+            auto tris2 = new std::vector<TriInd>;
+            tris2->reserve(tris->size() - bestI);
+            if (bestD != 2)
+            { //used the copied dimension vector
+                for (std::size_t i = 0; i < bestI; ++i) {
+                    tris1->push_back(bestDCopy[i]);
+                }
+
+                for (std::size_t i = bestI; i < tris->size(); ++i) {
+                    tris2->push_back(bestDCopy[i]);
+                }
+            }
+            else
+            {//use the currently sorted dimension vector
+                for (std::size_t i = 0; i < bestI; ++i) {
+                    tris1->push_back((*tris)[i]);
+                }
+
+                for (std::size_t i = bestI; i < tris->size(); ++i) {
+                    tris2->push_back((*tris)[i]);
+                }
+            }
+
+            return {bestI, bestD, bestBB1, bestBB2, tris1, tris2};
+        } else {
+            return {};
+        }
     }
 
-    //Sort tris to be for the correct dimension
-    //if (bestD != 2) sortOnDim(tris, bestD);
-
-    //If the SAH isnt better than just no split, then dont split (invalid split return)
-    if (minSAH < TRI_INT_COST*tris->size())
+    else if (method == SAHBuckets)
     {
-        if (bestD != 2) *tris = bestDCopy;
-        return {bestI+1, bestD, bestBB1, bestBB2};
+        //1. Create and collect vertices in buckets
+        std::vector<std::vector<TriInd>> dimBuckets[3]
+                {std::vector<std::vector<TriInd>>(BUCKETS),
+                 std::vector<std::vector<TriInd>>(BUCKETS),
+                 std::vector<std::vector<TriInd>>(BUCKETS)};
+        BoundingBox3f dimBBox[3][BUCKETS];
+        for(auto & i : dimBBox)
+        {
+            for(auto & b : i)
+            {
+                b = {};
+            }
+        }
+
+        Vector3f sz = bb.max-bb.min;
+        for(auto t: *tris)
+        {
+            Vector3f pt = meshes[t.mesh]->getCentroid(t.i);
+            Vector3f relPt = BUCKETS*(pt - bb.min) ;
+            for(int d = 0; d < 3; ++d)
+            {
+                int ind = (int)(relPt[d]/sz[d]);
+                dimBuckets[d][ind].push_back(t);
+                dimBBox[d][ind].expandBy(getTriBB(t));
+            }
+        }
+
+        //2. SAH :)
+        float minSAH = TRI_INT_COST * tris->size() + 1;
+
+        int bestD = 0;
+        std::size_t bestI = 0;
+        std::size_t bestTriCt = 0;
+        BoundingBox3f bestBB1, bestBB2;
+
+        ///SA of the whole BB
+        float bbSA = bb.getSurfaceArea();
+
+        //Dimension loop
+        for (int d = 0; d < 3; ++d) {
+
+            ///All of the bounding boxes for the second node (first node can be computed on the fly)
+            std::vector<BoundingBox3f> backAABBs(BUCKETS-1);
+            //last bb should just be the single bucket
+            backAABBs[BUCKETS-2] = dimBBox[d][BUCKETS-1];
+            for (int i = BUCKETS - 3; i >= 0; --i) {
+                backAABBs[i] = backAABBs[i + 1];
+                backAABBs[i].expandBy(dimBBox[d][i+1]);
+            }
+
+            BoundingBox3f curBB = {};
+            int lCost = 0;
+            int hCost = tris->size();
+            for (std::size_t i = 0; i < BUCKETS - 1; ++i) {
+
+                //Update/expand the BB!
+                curBB.expandBy(dimBBox[d][i]);
+
+                lCost += dimBuckets[d][i].size();
+                hCost -= dimBuckets[d][i].size();
+
+                float sah = TRAVERSAL_TIME + TRI_INT_COST*(curBB.getSurfaceArea() * lCost +
+                                              backAABBs[i].getSurfaceArea() * hCost) / bbSA;
+
+                if (sah <= minSAH) {
+                    //std::cout << "Dim " << d << ", lCost " << lCost << ", hCost " << hCost << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
+                    //std::cout << "BBSA " << bbSA << ", cur " << curBB.getSurfaceArea() << ", back " << backAABBs[i].getSurfaceArea() << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
+                    minSAH = sah;
+                    bestD = d;
+                    bestI = i;
+                    bestTriCt = lCost;
+                    bestBB1 = curBB;
+                    bestBB2 = backAABBs[i];
+                }
+
+            }
+
+        }
+
+        //If the SAH isnt better than just no split, then dont split (invalid split return)
+        if (minSAH < TRI_INT_COST * tris->size()) {
+            bestI++;
+            auto tris1 = new std::vector<TriInd>;
+            tris1->reserve(bestTriCt);
+            auto tris2 = new std::vector<TriInd>;
+            tris2->reserve(tris->size() - bestTriCt);
+
+            for(std::size_t b = 0; b < bestI; b++)
+            {
+                for(auto t: dimBuckets[bestD][b])
+                {
+                    tris1->push_back(t);
+                }
+            }
+            for(std::size_t b = bestI; b < BUCKETS; b++)
+            {
+                for(auto t: dimBuckets[bestD][b])
+                {
+                    tris2->push_back(t);
+                }
+            }
+
+            return {bestTriCt, bestD, bestBB1, bestBB2, tris1, tris2};
+        } else {
+            return {};
+        }
+
     }
     else
     {
-        return {(std::size_t) -1, -1, {},{}};
+        std::cout << "Split method " << method << " not yet implemented!" << std::endl;
+        return {};
     }
 
 }

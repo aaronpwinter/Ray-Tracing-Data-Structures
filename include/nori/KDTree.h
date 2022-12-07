@@ -22,13 +22,15 @@ public:
     static constexpr float EMPTY_MODIFIER = .8;
 
 public:
+    enum SplitMethod{Midpoint, SAHFull};
+
     enum dim {x=0, y=1, z=2};
 
     ///A simple struct containing a dim and float, used to represent
     /// the split location in a tree node.
     struct Split
     {
-        Split(): d(x), l(0){};
+        Split(): d(x), l(-1){};
         Split(dim di, float dist): d(di), l(dist){};
         Split(int di, float dist): d((di == 0)?x:((di==1)?y:z)), l(dist){};
 
@@ -47,8 +49,8 @@ public:
     ///     and a vector of triangle indices.
     struct Node
     {
-        Node(BoundingBox3f bb, std::vector<TriInd>* triangles):
-            AABB(bb), tris(triangles)
+        Node(BoundingBox3f bb, std::vector<TriInd>* triangles, Split split):
+            AABB(bb), tris(triangles), s(split)
         {
             children[0] = nullptr;
             children[1] = nullptr;
@@ -105,7 +107,7 @@ public:
         std::vector<TriInd>* tris;
 
         ///The split location for this KD Node.
-        //Split s;
+        Split s;
     };
 
     /// A simple struct used for SAH triangle sorting and "events" (enter/exit tri)
@@ -123,7 +125,12 @@ public:
         delete root;
     }
 
-    void build() override;
+    void build() override
+    {
+        build(SAHFull);
+    }
+
+    void build(SplitMethod method);
 
     TriInd rayIntersect(const Ray3f &ray_, Intersection &its, bool shadowRay) const override;
 
@@ -142,7 +149,8 @@ public:
 
 
 private:
-    Node* build(const BoundingBox3f& bb, std::vector<TriInd>* tris, int depth);
+    Node* build(const BoundingBox3f& bb, std::vector<TriInd>* tris, int depth,
+                SplitMethod method);
 
     /// Searches through all the triangles in a leaf node for the closest intersection, and
     ///     returns that triangle index. Returns -1 on no intersection
@@ -166,7 +174,8 @@ private:
     /// \param bb The AABB bounding the triangles.
     /// \param tris The triangles within the AABB
     /// \return A split representing where to split the current node.
-    Split getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *tris) const;
+    Split getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *tris,
+                       SplitMethod method) const;
 
     BoundingBox3f getTriBB(const TriInd& t) const{
         return meshes[t.mesh]->getBoundingBox(t.i);
