@@ -35,7 +35,7 @@ void BVH::build() {
         }
     }
 
-    //Build (& time) KD-Tree
+    //Build (& time) BVH
     auto startT = std::chrono::high_resolution_clock::now();
     root = build(bbox, tris, 0);
     auto endT = std::chrono::high_resolution_clock::now();
@@ -86,9 +86,6 @@ BVH::Node *BVH::build(const nori::BoundingBox3f& bb, std::vector<TriInd> *tris, 
         AABBs[1].expandBy(getTriBB( t ));
     }
 
-
-    //std::cout << AABBs[0].toString() << " " << AABBs[1].toString() << std::endl;
-
     Node* n = new Node(bb, nullptr, s.dim);
 #if PARALLEL
     tbb::parallel_for(int(0), 2,
@@ -118,8 +115,6 @@ BVH::TriInd BVH::leafRayTriIntersect(Node *n, nori::Ray3f &ray, nori::Intersecti
                                            bool shadowRay) const
 {
     TriInd f = {};      // Triangle index of the closest intersection
-
-    //Ray3f ray(ray_); /// Make a copy of the ray (we will need to update its '.maxt' value)
 
     /* Brute force search through all triangles */
     for (auto idx : *(n->tris)) {
@@ -170,7 +165,7 @@ BVH::TriInd BVH::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray, nori::In
         else
         {
             ///Add the two child nodes in order
-            if(ray.d[cur->dim] >= 0)// dists[0] < dists[1]
+            if(ray.d[cur->dim] >= 0)
             { //0 node closer theoretically
                 ++si;
                 stack[si] = cur->children[1];
@@ -200,16 +195,12 @@ BVH::SplitData BVH::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *t
     std::size_t bestI = 0;
     BoundingBox3f bestBB1, bestBB2;
 
-    //The size of the AABB
-    //Vector3f sz = bb.max-bb.min;
     float totTriCost = tris->size()*TRI_INT_COST;
     ///SA of the whole BB
     float bbSA = bb.getSurfaceArea();
 
     //Dimension loop
     for (int d = 0; d < 3; ++d) {
-        //AXIS constants
-        //int d2 = (d+1)%3, d3 = (d+2)%3;
 
         //Try with the min axis bounds
         sortOnDim(tris, d);
@@ -230,7 +221,6 @@ BVH::SplitData BVH::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *t
 
             //Update/expand the BB!
             TriInd t = (*tris)[i];
-            //Mesh *mesh = meshes[t.mesh];
             curBB.expandBy(getTriBB(t));
 
             lCost += TRI_INT_COST;
@@ -238,8 +228,6 @@ BVH::SplitData BVH::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *t
 
             float sah = TRAVERSAL_TIME + (curBB.getSurfaceArea() * lCost +
                                           backAABBs[i].getSurfaceArea() * hCost) / bbSA;
-            //std::cout << "Dim " << d << ", lCost " << lCost << ", hCost " << hCost << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
-            //std::cout << "BBSA " << bbSA << ", cur " << curBB.getSurfaceArea() << ", back " << backAABBs[i].getSurfaceArea() << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
 
             if (sah <= minSAH) {
                 //std::cout << "Dim " << d << ", lCost " << lCost << ", hCost " << hCost << ", totTriCost " << totTriCost << ", SAH " << sah << std::endl;
