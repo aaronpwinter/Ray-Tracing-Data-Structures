@@ -150,8 +150,6 @@ BVH::TriInd BVH::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray, nori::In
                                              bool shadowRay) const
 {
     Node* stack[MAX_DEPTH + 1];
-    ///Whether this node in the stack actually intersects the ray
-    bool intersects[MAX_DEPTH + 1];
     ///Stack index
     int si = 0;
 
@@ -160,11 +158,10 @@ BVH::TriInd BVH::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray, nori::In
 
     float close, far;
     stack[0] = n;
-    intersects[0] = n->AABB.rayIntersect(ray_, close, far);
     while(si >= 0)
     {
         Node* cur = stack[si];
-        bool goodBB = intersects[si];
+        bool goodBB = cur->AABB.rayIntersect(ray_, close, far);
         --si;
         if(cur == nullptr || !goodBB) continue;
 
@@ -178,40 +175,20 @@ BVH::TriInd BVH::nodeCloseTriIntersect(Node *n, const nori::Ray3f &ray, nori::In
         }
         else
         {
-            //1. Get all the child nodes that the ray intersects
-            float dists[2]{ray_.maxt,ray_.maxt}; //large values, not too important
-            bool valid[2]{false,false};
-
-            for (int i = 0; i < 2; ++i)
-            {
-                Node* c = cur->children[i];
-                if (c != nullptr)
-                {
-                    if(c->AABB.rayIntersect(ray_, close, far))
-                    {
-                        dists[i] = close;
-                        valid[i] = true;
-                    }
-                }
-            }
-
+            ///Add the two child nodes in order
             if(ray.d[cur->dim] >= 0)// dists[0] < dists[1])
             { //0 node closer (or just invalid idk)
                 ++si;
                 stack[si] = cur->children[1];
-                intersects[si] = valid[1];
                 ++si;
                 stack[si] = cur->children[0];
-                intersects[si] = valid[0];
             }
             else
             {//1 node is closer
                 ++si;
                 stack[si] = cur->children[0];
-                intersects[si] = valid[0];
                 ++si;
                 stack[si] = cur->children[1];
-                intersects[si] = valid[1];
             }
 
         }
