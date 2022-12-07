@@ -23,7 +23,7 @@ public:
     static constexpr std::size_t BUCKETS = 12;
 
 public:
-    enum SplitMethod{SAHFull, SAHBuckets, HLBVH};
+    enum SplitMethod{SAHFull, SAHBuckets};
 
     /// A node for the BVH, which contains 2 children, stores its own AABB,
     ///     and a vector of triangle indices.

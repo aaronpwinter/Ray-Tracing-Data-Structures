@@ -49,6 +49,7 @@ void BVH::build(SplitMethod method) {
     std::cout << "Acceleration Structure: BVH" << std::endl;
     std::cout << "Nodes: " << root->nodeCount() << ", Tree Stored Tris: " << root->triCount() << ", Mesh Tris: " << triCt << std::endl;
     std::cout << "BVH Construction Time: " << durT.count() << " MS" << endl;
+
 }
 BVH::Node *BVH::build(const nori::BoundingBox3f& bb, std::vector<TriInd> *tris, int depth, SplitMethod method)
 {
