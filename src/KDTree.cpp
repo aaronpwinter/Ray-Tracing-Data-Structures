@@ -399,10 +399,15 @@ KDTree::Split KDTree::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> 
         return {dimension, sz[dimension] / 2};
     }
 
+    else if (method == BruteForce)
+    {
+        return {};
+    }
+
     else
     {
         std::cout << "Split method " << method << " not yet implemented!" << std::endl;
-        return {x,-1};
+        return {};
     }
 
 }

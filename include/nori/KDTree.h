@@ -22,7 +22,7 @@ public:
     static constexpr float EMPTY_MODIFIER = .8;
 
 public:
-    enum SplitMethod{Midpoint, SAHFull};
+    enum SplitMethod{Midpoint, SAHFull, BruteForce};
 
     enum dim {x=0, y=1, z=2};
 
