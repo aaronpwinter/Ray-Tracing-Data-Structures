@@ -277,6 +277,7 @@ BVH::SplitData BVH::getGoodSplit(const BoundingBox3f &bb, std::vector<TriInd> *t
         }
 
         Vector3f sz = bb.max-bb.min;
+		
         for(auto t: *tris)
         {
             Vector3f pt = meshes[t.mesh]->getCentroid(t.i);

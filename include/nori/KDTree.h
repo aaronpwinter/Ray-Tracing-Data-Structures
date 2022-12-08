@@ -120,6 +120,9 @@ public:
     };
 
 public:
+    KDTree(SplitMethod method = SAHFull):
+		AccelTree(), m_method(method), root(nullptr) {};
+
     ~KDTree() override
     {
         delete root;
@@ -127,7 +130,7 @@ public:
 
     void build() override
     {
-        build(SAHFull);
+        build(m_method);
     }
 
     void build(SplitMethod method);
@@ -183,6 +186,8 @@ private:
 
 private:
     Node* root;
+
+	SplitMethod m_method;
 
 };
 

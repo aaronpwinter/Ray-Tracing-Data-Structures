@@ -91,6 +91,9 @@ public:
     };
 
 public:
+    BVH(SplitMethod method = SAHBuckets) :
+        AccelTree(), m_method(method), root(nullptr) {};
+
     ~BVH() override
     {
         delete root;
@@ -98,7 +101,7 @@ public:
 
     void build() override
     {
-        build(SAHBuckets);
+        build(m_method);
     }
 
     void build(SplitMethod method);
@@ -162,6 +165,8 @@ private:
 
 private:
     Node* root;
+
+	SplitMethod m_method;
 
 };
 
