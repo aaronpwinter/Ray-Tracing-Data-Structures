@@ -10,7 +10,12 @@
 NORI_NAMESPACE_BEGIN
 
 Accel::Accel() {
-    m_tree = new BVH();
+	//m_tree = new KDTree(KDTree::BruteForce); //This is just for testing bruteforce intersection checking
+    //m_tree = new Octree();
+    //m_tree = new KDTree(KDTree::Midpoint);
+    //m_tree = new KDTree(KDTree::SAHFull); 
+    //m_tree = new BVH(BVH::SAHFull);
+    m_tree = new BVH(BVH::SAHBuckets);
 }
 
 

@@ -12,7 +12,7 @@
 
 /// For testing, if the ray intersection test should return upon first triangle hit
 /// Greatly improves speed, but decreases image accuracy
-#define QUICK_RETURN true
+#define QUICK_RETURN false
 
 NORI_NAMESPACE_BEGIN
 
