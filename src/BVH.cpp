@@ -9,8 +9,6 @@
 
 //Set to true for parallel construction of BVH
 #define BVH_PARALLEL true
-//Time W/O Parallel (set to false): ~ MS
-//Time W/ Parallel (set to true):   ~ MS
 
 /// For testing, if the ray intersection test should return upon first triangle hit
 /// Greatly improves speed, but decreases image accuracy

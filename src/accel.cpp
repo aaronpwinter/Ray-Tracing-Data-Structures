@@ -10,7 +10,7 @@
 NORI_NAMESPACE_BEGIN
 
 Accel::Accel() {
-    m_tree = new BVH(BVH::SAHFull);
+    m_tree = new BVH();
 }
 
 

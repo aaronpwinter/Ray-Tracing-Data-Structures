@@ -13,7 +13,7 @@ class Octree: public AccelTree
 public:
     ///The upper bound for triangles in a node that stops the node from subdividing.
     static constexpr std::size_t FEW_TRIS = 10;
-    int MAX_DEPTH = 100;
+    static constexpr int MAX_DEPTH = 12;
 
 public:
     /// A node for the Octree, which contains 8 children, stores its own AABB,
