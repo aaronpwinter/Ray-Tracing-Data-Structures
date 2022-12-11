@@ -7,6 +7,15 @@ The most relevant files for the data structure code can be found in:
 - BVH: [BVH.h](include/nori/BVH.h), [BVH.cpp](src/BVH.cpp)
 - Accel: [accel.h](include/nori/accel.h), [accel.cpp](src/accel.cpp). This implements the data structures themselves, and is where the ray-object intersections occur.
 
+
+# Data Structures
+## Octree
+
+## KD-Tree
+
+## BVH
+
+# Extra
 ## Getting Started
 ### Use in pre-existing projects
 - All projects must use [AccelTree.h](include/nori/AccelTree.h) and [AccelTree.cpp](src/AccelTree.cpp), as other classes inherit from this. Specific data structures, such as an `Octree`, can then be included at one's choice.
@@ -22,18 +31,15 @@ The most relevant files for the data structure code can be found in:
    - (Optionally) Change `Debug` to `Release`, and then build the project by navigating to the `Build` menu and `Build Solution` (Ctrl+Shift+B)
    - Navigate to the `\Release` folder, and run `nori.exe`, with an `xml` file as the argument. An example would be `nori.exe ../../scenes/toy_example/bunny.xml`.
 
-# Data Structures
-## Octree
+### Selecting a Data Structure
+- When using the Nori codebase, selecting a data structure can be fully done within the `accel.cpp` file. Within the `Accel` constructor, you can change the currently commented data structure to be one that you choose, with the algorithm of choice. All choices are explained above within the "Data Structures" section.
+- If using your own codebase, you can follow the code in `accel.cpp`, where you construct an `AccelTree` of type according to the desired data structure, add meshes to it using `addMesh()`, and build the data structure before ray tracing using `build()`. When raytracing, you need only call the `rayIntersect` method, and it will return the intersected triangle (the `rayIntersect` method can also be altered to return other data like hit point).
 
-## KD-Tree
-
-## BVH
-
-
-# Extra
 ## Notes
 - To run the ajax or stanford dragon scenes, you must insert your own `.obj` files into the folder that includes the `.xml` file (so an `ajax.obj` would go into `\scenes\ajax`)
 - This project was set up using the Nori Educational renderer, and uses it as a foundation. While scenes can be rendered, I did not create any of the ray tracing algorithms themselves, merely the structures for accelerating the speed of ray-object (specifically ray-triangle) intersection across a mesh of triangles. 
 - This project uses TBB to utilize paralellism inherent in creating tree-like structures. To disable the multi-threading, in each of the source files (or for whichever structure specifically), set the line `#define PARALLEL true` to `#define PARALLEL false`.
 
 ## Credits/Libraries
+- The Nori Educational Ray Tracer ([Github](https://wjakob.github.io/nori/))
+- Intel's TBB ([Official Site](https://www.intel.com/content/www/us/en/developer/tools/oneapi/onetbb.html#gs.kw5a3k)) ([Github](https://github.com/oneapi-src/oneTBB))
