@@ -32,6 +32,7 @@ The most relevant files for the data structure code can be found in:
 
 # Extra
 ## Notes
+- To run the ajax or stanford dragon scenes, you must insert your own `.obj` files into the folder that includes the `.xml` file (so an `ajax.obj` would go into `\scenes\ajax`)
 - This project was set up using the Nori Educational renderer, and uses it as a foundation. While scenes can be rendered, I did not create any of the ray tracing algorithms themselves, merely the structures for accelerating the speed of ray-object (specifically ray-triangle) intersection across a mesh of triangles. 
 - This project uses TBB to utilize paralellism inherent in creating tree-like structures. To disable the multi-threading, in each of the source files (or for whichever structure specifically), set the line `#define PARALLEL true` to `#define PARALLEL false`.
 
