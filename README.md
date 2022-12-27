@@ -1,5 +1,5 @@
 # Ray Tracing Data Structures
- Data structures, such as Octrees and KD-Trees, for accelerating ray tracing.
+ Data structures, such as KD-Trees and BHVs, for accelerating ray tracing.
 The most relevant files for the data structure code can be found in:
 - AccelTree: [AccelTree.h](include/nori/AccelTree.h), [AccelTree.cpp](src/AccelTree.cpp). This is the abstract base-class for all of the acceleration data structures.
 - Octree: [Octree.h](include/nori/Octree.h), [Octree.cpp](src/Octree.cpp)
@@ -10,10 +10,31 @@ The most relevant files for the data structure code can be found in:
 
 # Data Structures
 ## Octree
+### Overview
+- The Octree is the most basic of the implemented data structures, consisting of a tree where each node in the tree contains eight children. 
+- There is no algorithm for determining the location of each of the child nodes, and each octree node separates its space equally into eight parts for each of the children nodes. The implementation for determining where each child node's bounding box is located can be found in [Octree.cpp](src/Octree.cpp), under the `childBB()` function.
+- Construction of this tree is basic, where for each node, the tree checks the triangles contained inside that node to see if they intersect any of the children nodes. If an intersection is found for one (or more) of these child nodes, that triangle is then added to that child node. Any node with less than a specified amount of triangles (currently 10), is pruned and turned into a leaf node.
+- Traversal is done simply, in which a ray which intersects a node then checks for intersections of all of that node's children. The intersected children are then checked in an order conforming to which child node was hit first, and continues on this until reaching a leaf node. Within leaf nodes, every triangle is trivially checked to find which is closest. 
+
+### Usage (Nori)
+- To use the Octree, the following statement should be placed within the `Accel()` constructor of the [accel.cpp](src/accel.cpp) class.
+  - m_tree = new Octree();
 
 ## KD-Tree
+### Overview
 
-## BVH
+### Usage (Nori)
+- To use the KD-Tree, one of the following statements can be placed within the `Accel()` constructor of the [accel.cpp](src/accel.cpp) class, depending on which algorithm you would like to use.
+  - m_tree = new KDTree(KDTree::Midpoint); *This generates a KD-Tree using the trivial midpoint method*
+  - m_tree = new KDTree(KDTree::SAHFull); *This generates a KD-Tree using the aforementioned SAH algorithm (while checking "all" possible split points)*
+
+## BVH (Bounding Volume Heirarchy)
+### Overview
+
+### Usage (Nori)
+- To use the BVH, one of the following statements can be placed within the `Accel()` constructor of the [accel.cpp](src/accel.cpp) class, depending on which algorithm you would like to use.
+  - m_tree = new BVH(BVH::SAHFull); *This generates a BVH using the aforementioned SAH algorithm (while checking "all" possible partitions of triangles)*
+  - m_tree = new BVH(BVH::SAHBuckets); *This generates a BVH using SAH with the addition of bucketing for determining partitions*
 
 # Extra
 ## Getting Started
