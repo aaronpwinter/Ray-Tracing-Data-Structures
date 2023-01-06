@@ -22,6 +22,16 @@ The most relevant files for the data structure code can be found in:
 
 ## KD-Tree
 ### Overview
+- A KD-Tree is similar to an Octree in that its space is partitioned into multiple divisions, with the key difference being that each node only has two children, and the children nodes are determined by splitting the parent node by an axis-aligned plane.
+- Since any node can be split on any of its three axes, x, y, or z, at any point along those axes, there are theoretically an infinite amount of split positions, so algorithms must be used to determine these split positions, whether simple or not.
+- Construction of the tree is basic assuming a split position algorithm is present. It is similar to the Octree, where for each node, the node is analyzed to find a split point using some algorithm (discussed below), then that split point is used to construct the two child nodes. Triangles are then added to each child node in the same way as the Octree, also pruning in the same fashion.
+- Traversal of the KD-Tree is nearly identical to the Octree, with the key difference being that there are only two children nodes to check for each node. 
+  - This also allows for a simpler test to check which child node is closer to the ray, where if a ray moves in the same direction as the split axis, then the "first" node is hit first (assuming it is hit), and inversely if the ray is in the opposite direction as the split direction then the "second" node is hit first.
+- The algorithms implemented for generating KD-Trees are midpoint and SAH (surface area heuristics). 
+  - Midpoint is trivial, where a splitpoint is determined purely based on the parent node's bounding box. The longest axis of the bounding box is effectively cut in half, resulting in quick construction, but poorly balanced trees.
+  - The SAH algorithm analyzes the relative positions of triangles and the resulting sizes of bounding boxes after the split to determine a split position. At any given split position, a value, or the "surface area heuristic," is assigned, and the minimum SAH is desired to be optimal.
+    - This surface area heuristic is found by comparing the size of a child node with the number of triangles within it, where more condensely packed nodes are favored (while also accompanied by sparsely-inhabited, but large, nodes). 
+    - Since *every possible* split location cannot feasibly be tested, split points are located at every triangle bound.
 
 ### Usage (Nori)
 - To use the KD-Tree, one of the following statements can be placed within the `Accel()` constructor of the [accel.cpp](src/accel.cpp) class, depending on which algorithm you would like to use.
@@ -30,11 +40,26 @@ The most relevant files for the data structure code can be found in:
 
 ## BVH (Bounding Volume Heirarchy)
 ### Overview
+- A BVH differs from the above trees, being one that partitions its *objects* instead of its space. Each node consists of two children, where each child, instead of being a bounding box derived from the parent, merely contains a partition of the parent node's triangles (with bounding boxes being determined by these included triangles).
+- Construction of this tree is basic assuming a partition finding algorithm is present.
+  - First find a partition using some algorithm, and assign those triangles to two children nodes.
+  - For each child node, construct a bounding box. (Note that these bounding boxes can exclusively be within the parent bounding box)
+- While traversal of the tree is simple, similar to the above two trees, a key difference is that the algorithm cannot early terminate, as some bounding boxes may overlap others.
 
 ### Usage (Nori)
 - To use the BVH, one of the following statements can be placed within the `Accel()` constructor of the [accel.cpp](src/accel.cpp) class, depending on which algorithm you would like to use.
   - m_tree = new BVH(BVH::SAHFull); *This generates a BVH using the aforementioned SAH algorithm (while checking "all" possible partitions of triangles)*
   - m_tree = new BVH(BVH::SAHBuckets); *This generates a BVH using SAH with the addition of bucketing for determining partitions*
+
+# Runtime and Memory Comparisons
+- Each of these were run on a model of an Ajax bust, which can be freely found on the Jotero forum, and uses the [ajax-normals.xml](scenes/ajax/ajax-normals.xml) file. *This will not work by default as the model is not included in this repository.*
+- To compare with a brute-force rendering method (IE: checking all triangles for every ray), the following statement can be used in the `Accel()` constructor:
+  - m_tree = new KDTree(KDTree::BruteForce);
+  - This was not included within my data as it was too slow for the Ajax bust mentioned above.  
+
+## KD-Tree
+
+## BVH
 
 # Extra
 ## Getting Started
@@ -60,6 +85,7 @@ The most relevant files for the data structure code can be found in:
 - To run the ajax or stanford dragon scenes, you must insert your own `.obj` files into the folder that includes the `.xml` file (so an `ajax.obj` would go into `\scenes\ajax`)
 - This project was set up using the Nori Educational renderer, and uses it as a foundation. While scenes can be rendered, I did not create any of the ray tracing algorithms themselves, merely the structures for accelerating the speed of ray-object (specifically ray-triangle) intersection across a mesh of triangles. 
 - This project uses TBB to utilize paralellism inherent in creating tree-like structures. To disable the multi-threading, in each of the source files (or for whichever structure specifically), set the line `#define PARALLEL true` to `#define PARALLEL false`.
+- All tests were run on an AMD Ryzen 7 5800X processor with 32 GB of RAM running Windows 10.
 
 ## Credits/Libraries
 - The Nori Educational Ray Tracer ([Github](https://wjakob.github.io/nori/))
