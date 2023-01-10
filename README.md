@@ -7,6 +7,7 @@ The most relevant files for the data structure code can be found in:
 - BVH: [BVH.h](include/nori/BVH.h), [BVH.cpp](src/BVH.cpp)
 - Accel: [accel.h](include/nori/accel.h), [accel.cpp](src/accel.cpp). This implements the data structures themselves, and is where the ray-object intersections occur.
 
+![](/images/ajax%20compare.gif)
 
 # Data Structures
 ## Octree
@@ -60,9 +61,10 @@ The most relevant files for the data structure code can be found in:
   - m_tree = new KDTree(KDTree::BruteForce);
   - This was not included within my data as it was too slow for the Ajax bust mentioned above.  
 
-## KD-Tree
-
-## BVH
+![](/images/full_compare.png)
+- As more complex data structures are used, with algorithms to dictate their construction, the memory consumption and render time generally decreases, while construction time increases. 
+- For BVH's, since they only include one reference for each triangle, these of course also have the lowest memory consumption, but at the cost of render time due to not being able to terminate early.
+  - While early termination is included on the chart, boasting both fast construction and render times, these often lead to obvious artifacts in the render, especially on smaller models.
 
 # Extra
 ## Getting Started
