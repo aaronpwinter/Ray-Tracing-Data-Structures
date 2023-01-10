@@ -44,7 +44,10 @@ The most relevant files for the data structure code can be found in:
 - Construction of this tree is basic assuming a partition finding algorithm is present.
   - First find a partition using some algorithm, and assign those triangles to two children nodes.
   - For each child node, construct a bounding box. (Note that these bounding boxes can exclusively be within the parent bounding box)
-- While traversal of the tree is simple, similar to the above two trees, a key difference is that the algorithm cannot early terminate, as some bounding boxes may overlap others.
+- While traversal of the tree is simple, similar to the above two trees, a key difference is that the algorithm cannot early terminate, as some node bounding boxes may overlap others. Traversal can still avoid exploring nodes which do not intersect a given ray, but *all* nodes that do intersect the ray *must* be traversed.
+- The only algorithm implemented for finding BVH partitions is SAH:
+  - The general form of the SAH algorithm is near identical to the KD-Tree, with the main difference being that SAH bounding boxes are constructed by continually merging triangle bounding boxes. The base algorithm still iterates over "all" possible partitions, being the partitions along each of the three axes.
+  - Since there is a large overhead associated with constantly expanding SAH bounding boxes, in addition to the large amount of possible partitions (*3n*), bucketing has also been implemented to save on BVH construction time while possibly sacrificing tree optimality. Using bucketing, only a small amount of possible partitions are compared per node per dimension (in this case, 12), leading to a greatly decreased construction time of the tree.
 
 ### Usage (Nori)
 - To use the BVH, one of the following statements can be placed within the `Accel()` constructor of the [accel.cpp](src/accel.cpp) class, depending on which algorithm you would like to use.
