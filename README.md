@@ -22,6 +22,7 @@ The most relevant files for the data structure code can be found in:
   - m_tree = new Octree();
 
 ## KD-Tree
+![](/images/KDVisual.png)
 ### Overview
 - A KD-Tree is similar to an Octree in that its space is partitioned into multiple divisions, with the key difference being that each node only has two children, and the children nodes are determined by splitting the parent node by an axis-aligned plane.
 - Since any node can be split on any of its three axes, x, y, or z, at any point along those axes, there are theoretically an infinite amount of split positions, so algorithms must be used to determine these split positions, whether simple or not.
@@ -40,6 +41,7 @@ The most relevant files for the data structure code can be found in:
   - m_tree = new KDTree(KDTree::SAHFull); *This generates a KD-Tree using the aforementioned SAH algorithm (while checking "all" possible split points)*
 
 ## BVH (Bounding Volume Heirarchy)
+![](/images/BVHVisual.png)
 ### Overview
 - A BVH differs from the above trees, being one that partitions its *objects* instead of its space. Each node consists of two children, where each child, instead of being a bounding box derived from the parent, merely contains a partition of the parent node's triangles (with bounding boxes being determined by these included triangles).
 - Construction of this tree is basic assuming a partition finding algorithm is present.
@@ -49,6 +51,7 @@ The most relevant files for the data structure code can be found in:
 - The only algorithm implemented for finding BVH partitions is SAH:
   - The general form of the SAH algorithm is near identical to the KD-Tree, with the main difference being that SAH bounding boxes are constructed by continually merging triangle bounding boxes. The base algorithm still iterates over "all" possible partitions, being the partitions along each of the three axes.
   - Since there is a large overhead associated with constantly expanding SAH bounding boxes, in addition to the large amount of possible partitions (*3n*), bucketing has also been implemented to save on BVH construction time while possibly sacrificing tree optimality. Using bucketing, only a small amount of possible partitions are compared per node per dimension (in this case, 12), leading to a greatly decreased construction time of the tree.
+    - ![](/images/BVHBuckets.png)
 
 ### Usage (Nori)
 - To use the BVH, one of the following statements can be placed within the `Accel()` constructor of the [accel.cpp](src/accel.cpp) class, depending on which algorithm you would like to use.
